@@ -1,0 +1,16 @@
+site_name: Logging Discord
+repo_url: https://github.com/brunobrown/logging-discord
+repo_name: brunobrown/logging-discord
+edit_uri: /tree/master/docs
+
+theme:
+  name: material
+  language: pt-BR
+  logo: /assets/logo.png
+  favicon: /assets/favicon.png
+
+markdown_extensions:
+  - attr_list
+
+extra_css:
+  - css/extra.css
