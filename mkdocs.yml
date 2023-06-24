@@ -14,3 +14,9 @@ markdown_extensions:
 
 extra_css:
   - css/extra.css
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [ docs/logging_discord ]
