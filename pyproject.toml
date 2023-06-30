@@ -9,6 +9,8 @@ packages = [{include = "logging_discord"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 httpx = "^0.24.1"
+dynaconf = "^3.1.12"
+config = "^0.5.1"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -37,7 +39,7 @@ profile = "black"
 line_length = 79
 
 [tool.taskipy.tasks]
-lint = "blue --check --diff . && isort --check --diff ."
+lint = "blue --check --diff . && isort --check --diff . && blue ."
 docs = "mkdocs serve"
 pre_test = "task lint"
 test = "pytest -s -x --cov=logging_discord -vv"

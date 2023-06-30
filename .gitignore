@@ -177,3 +177,6 @@ pyrightconfig.json
 
 # Generated using ignr.py - github.com/Antrikshy/ignr.py
 
+# secret file
+.secrets.toml
+

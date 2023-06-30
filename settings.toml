@@ -1,0 +1,10 @@
+[default]
+    AVATAR_URL = 'https://i0.wp.com/www.theterminatorfans.com/wp-content/uploads/2012/09/the-terminator3.jpg?resize=900%2C450&ssl=1'
+
+[development]
+    AVATAR_URL = 'https://i0.wp.com/www.theterminatorfans.com/wp-content/uploads/2012/09/the-terminator3.jpg?resize=900%2C450&ssl=1'
+
+[homologation]
+
+
+[production]

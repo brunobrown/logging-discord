@@ -1,6 +1,11 @@
+from __future__ import annotations
+
 import logging
 import traceback
+
 import httpx
+
+from config import settings
 
 LOG_LEVELS = {
     'unknown': 0,
@@ -8,7 +13,7 @@ LOG_LEVELS = {
     'info': 2,
     'warning': 3,
     'error': 4,
-    'critical': 5
+    'critical': 5,
 }
 
 DATA_LOG = [
@@ -18,12 +23,12 @@ DATA_LOG = [
     #   * 2196944 = Blue
     #   * 16497928 = Yellow
     #   * 14362664 = Red
-    {"emoji": ":thinking:   ", "title": "UNKNOWN ERROR", "color": 2040357},
-    {"emoji": ":bug:   ", "title": "DEBUG", "color": 8947848},
-    {"emoji": ":information_source:   ", "title": "INFO", "color": 2196944},
-    {"emoji": ":warning:   ", "title": "WARNING", "color": 16497928},
-    {"emoji": ":x:   ", "title": "ERROR", "color": 14362664},
-    {"emoji": ":sos:   ", "title": "CRITICAL", "color": 14362664}
+    {'emoji': ':thinking:   ', 'title': 'UNKNOWN ERROR', 'color': 2040357},
+    {'emoji': ':bug:   ', 'title': 'DEBUG', 'color': 8947848},
+    {'emoji': ':information_source:   ', 'title': 'INFO', 'color': 2196944},
+    {'emoji': ':warning:   ', 'title': 'WARNING', 'color': 16497928},
+    {'emoji': ':x:   ', 'title': 'ERROR', 'color': 14362664},
+    {'emoji': ':sos:   ', 'title': 'CRITICAL', 'color': 14362664},
 ]
 
 
@@ -34,7 +39,7 @@ class LogDiscord:
     Parameters
 
         webhook: str
-            URL do webhook.
+            Webhook do canal no discord.
         avatar_url: str
             URL do avatar.
         mode: str
@@ -43,38 +48,52 @@ class LogDiscord:
                 DEVELOPMENT
                 HOMOLOGATION
                 PRODUCTION
-
         app_name: str
-            Nome do app.
+            Nome do aplicativo.
 
     """
 
     def __init__(
-            self,
-            webhook: str = 'https://discord.com/api/webhooks/1089503453132361728/MijZoB0KnGn4j3_HbtEeYbuqMutgU_pZaHcAf1M4lzbCWOJX2VLIbPDrPHXNYe78PcMu',
-            avatar_url: str = 'https://i0.wp.com/www.theterminatorfans.com/wp-content/uploads/2012/09/the-terminator3.jpg?resize=900%2C450&ssl=1',
-            mode: str = 'DEVELOPMENT',
-            app_name: str = 'APP_TEST'
+        self,
+        webhook: str = settings.discord.WEBHOOK,
+        avatar_url: str = settings.development.AVATAR_URL,
+        mode: str = 'DEVELOPMENT',
+        app_name: str = 'APP_TEST',
     ):
 
         self.webhook = webhook
         self.avatar_url = avatar_url
         self.mode = mode
         self.app_name = app_name
+        self.number_characters = 6000
 
-    def send(self, **kwargs):
+    def send(
+        self,
+        show_traceback: bool = True,
+        error_message: str = '',
+        log_level: int = 1,
+    ):
         """
         Envia mensagens de erro no Discord.
 
         Parameters
 
-        kwargs:
+        show_traceback: bool
+            Exibe o traceback.
+        error_message: str
+            Mensagem de erro que será exibida junto ao traceback.
+        log_level: int
+            Define qual será o nível de log
+            Exemplo:
+                0 = unknown
+                1 = debug
+                2 = info
+                3 = warning
+                4 = error
+                5 = critical
 
         """
 
-        show_traceback = kwargs.get('show_traceback', True)
-        error_message = kwargs.get('error_message', '')
-        log_level = kwargs.get('log_level', LOG_LEVELS['debug'])
         error_traceback = ''
 
         if show_traceback and traceback.format_exc() != 'NoneType: None\n':
@@ -84,6 +103,9 @@ class LogDiscord:
             error_message = f' \n > **error_message**: {error_message}'
 
         error_traceback = f'{error_traceback}{error_message}'
+
+        if not isinstance(log_level, int):
+            log_level = 1
 
         emoji = DATA_LOG[log_level]['emoji']
         title = DATA_LOG[log_level]['title']
@@ -95,12 +117,17 @@ class LogDiscord:
 
         payload = self.__generate_payload(color, emoji, error_traceback, title)
 
-        if len(error_traceback) > 4096:
+        if len(error_traceback) > self.number_characters - 1904:
 
-            if len(error_traceback) > 6000:
-                error_traceback = '... ' + error_traceback[
-                                           len(error_traceback) - 5996:len(
-                                               error_traceback)]
+            if len(error_traceback) > self.number_characters:
+                error_traceback = (
+                    '... '
+                    + error_traceback[
+                        len(error_traceback)
+                        - self.number_characters
+                        - 4 : len(error_traceback)
+                    ]
+                )
 
             text_size = 4096
             embeds = []
@@ -112,7 +139,7 @@ class LogDiscord:
                         {
                             'title': f'{emoji}{self.mode.upper()} - {title}',
                             'description': f'_ _ \n {error_traceback[index:index + text_size - 83]} ...',
-                            'color': color
+                            'color': color,
                         }
                     )
                     continue
@@ -121,7 +148,7 @@ class LogDiscord:
                     {
                         'title': 'continuation',
                         'description': f'_ _ \n ... {error_traceback[index:index + text_size]}',
-                        'color': color
+                        'color': color,
                     }
                 )
 
@@ -130,6 +157,8 @@ class LogDiscord:
         try:
             response = httpx.post(self.webhook, params=params, json=payload)
             print(f'DISCORD_RESPONSE: {response.text}')
+            return response.text
+
         except Exception as error:
             logging.exception(
                 f'falha ao tentar enviar log para o discord. Error: {error}'
@@ -163,24 +192,23 @@ class LogDiscord:
                 {
                     'title': f'{emoji}{self.mode.upper()} - {title}',
                     'description': f'_ _ \n {error_traceback}',
-                    'color': color
+                    'color': color,
                 }
             ],
             'username': self.app_name,
             'avatar_url': self.avatar_url,
-            'attachments': []
+            'attachments': [],
         }
         return payload
 
 
 if __name__ == '__main__':
     log_discord = LogDiscord()
-    try:
-        25 / 0
-        # raise 'ZeroDivisionError: division by zero'
-    except ZeroDivisionError as error:
-        log_discord.send(
-            show_traceback=False,
-            error_message='testando mensagem de erro',
-            log_level=3
-        )
+
+    result = log_discord.send(
+        show_traceback=True,
+        error_message='testando mensagem de erro',
+        log_level=3,
+    )
+
+    print(result)
