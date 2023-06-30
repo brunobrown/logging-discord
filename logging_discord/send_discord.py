@@ -83,7 +83,7 @@ class LogDiscord:
         error_message: str
             Mensagem de erro que será exibida junto ao traceback.
         log_level: int
-            Define qual será o nível de log
+            Define qual será o nível de log |
             Exemplo:
                 0 = unknown
                 1 = debug
@@ -91,6 +91,13 @@ class LogDiscord:
                 3 = warning
                 4 = error
                 5 = critical
+
+        Exemple:
+            log_discord.send(
+                show_traceback=True,
+                error_message='testando mensagem de erro',
+                log_level=3
+            )
 
         """
 
