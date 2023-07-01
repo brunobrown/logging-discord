@@ -211,11 +211,9 @@ class LogDiscord:
 
 if __name__ == '__main__':
     log_discord = LogDiscord()
-
-    result = log_discord.send(
-        show_traceback=True,
-        error_message='testando mensagem de erro',
-        log_level=3,
-    )
+    try:
+        25/0
+    except Exception as error:
+        result = log_discord.send(log_level=3)
 
     print(result)
