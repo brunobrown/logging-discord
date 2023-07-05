@@ -7,34 +7,16 @@ import httpx
 
 from config import settings
 
-LOG_LEVELS = {
-    'unknown': 0,
-    'debug': 1,
-    'info': 2,
-    'warning': 3,
-    'error': 4,
-    'critical': 5,
-}
-
-DATA_LOG = [
-    #   color legend:
-    #   * 2040357 = Black
-    #   * 8947848 = Gray
-    #   * 2196944 = Blue
-    #   * 16497928 = Yellow
-    #   * 14362664 = Red
-    {'emoji': ':thinking:   ', 'title': 'UNKNOWN ERROR', 'color': 2040357},
-    {'emoji': ':bug:   ', 'title': 'DEBUG', 'color': 8947848},
-    {'emoji': ':information_source:   ', 'title': 'INFO', 'color': 2196944},
-    {'emoji': ':warning:   ', 'title': 'WARNING', 'color': 16497928},
-    {'emoji': ':x:   ', 'title': 'ERROR', 'color': 14362664},
-    {'emoji': ':sos:   ', 'title': 'CRITICAL', 'color': 14362664},
-]
-
 
 class LogDiscord:
     """
-    Registra mensagens de erros no Discord.
+    A classe LogDiscord é responsável por registrar mensagens de erro no
+    Discord. Recebe como parâmetros um webhook, a URL do avatar, um modo e
+    um nome de aplicativo. Possui um método send
+    que envia mensagens de erro para o Discord, com a opção de mostrar um
+    traceback e uma mensagem de erro. Também possui dois métodos
+    privados: __publish_record e __generate_embed_list, responsáveis por
+    gerar a lista de incorporação e publicar o registro no Discord.
 
     Parameters
 
@@ -53,28 +35,52 @@ class LogDiscord:
 
     """
 
+    log_levels = {
+        #   color legend:
+        #   * 2040357 = Black
+        #   * 8947848 = Gray
+        #   * 2196944 = Blue
+        #   * 16497928 = Yellow
+        #   * 14362664 = Red
+        0: {
+            'emoji': ':thinking:   ',
+            'title': 'UNKNOWN ERROR',
+            'color': 2040357,
+        },
+        1: {'emoji': ':bug:   ', 'title': 'DEBUG', 'color': 8947848},
+        2: {
+            'emoji': ':information_source:   ',
+            'title': 'INFO',
+            'color': 2196944,
+        },
+        3: {'emoji': ':warning:   ', 'title': 'WARNING', 'color': 16497928},
+        4: {'emoji': ':x:   ', 'title': 'ERROR', 'color': 14362664},
+        5: {'emoji': ':sos:   ', 'title': 'CRITICAL', 'color': 14362664},
+    }
+
     def __init__(
         self,
         webhook: str = settings.discord.WEBHOOK,
         avatar_url: str = settings.development.AVATAR_URL,
-        mode: str = 'DEVELOPMENT',
-        app_name: str = 'APP_TEST',
+        mode: str = settings.development.MODE,
+        app_name: str = settings.development.APP_NAME,
     ):
 
         self.webhook = webhook
         self.avatar_url = avatar_url
         self.mode = mode
         self.app_name = app_name
-        self.number_characters = 6000
+        self.__number_characters = 6000
 
     def send(
         self,
         show_traceback: bool = True,
         error_message: str = '',
         log_level: int = 1,
-    ):
+    ) -> str:
         """
-        Envia mensagens de erro no Discord.
+        Envia mensagens de erro para o Discord, com a opção de mostrar um
+        traceback e uma mensagem erro.
 
         Parameters
 
@@ -102,6 +108,9 @@ class LogDiscord:
         """
 
         error_traceback = ''
+        params = {
+            'wait': 'true',
+        }
 
         if show_traceback and traceback.format_exc() != 'NoneType: None\n':
             error_traceback = traceback.format_exc()
@@ -114,38 +123,87 @@ class LogDiscord:
         if not isinstance(log_level, int):
             log_level = 1
 
-        emoji = DATA_LOG[log_level]['emoji']
-        title = DATA_LOG[log_level]['title']
-        color = DATA_LOG[log_level]['color']
-
-        params = {
-            'wait': 'true',
-        }
+        emoji = self.log_levels[log_level]['emoji']
+        title = self.log_levels[log_level]['title']
+        color = self.log_levels[log_level]['color']
 
         payload = self.__generate_payload(color, emoji, error_traceback, title)
 
-        if len(error_traceback) > self.number_characters - 1904:
+        embeds = self.__generate_embed_list(
+            color, emoji, error_traceback, title
+        )
 
-            if len(error_traceback) > self.number_characters:
+        if embeds:
+            payload['embeds'] = embeds
+
+        return self.__publish_record(params, payload)
+
+    def __publish_record(self, params, payload) -> str:
+        """
+        Publica o registro no Discord.
+        """
+
+        try:
+            response = httpx.post(self.webhook, params=params, json=payload)
+            print(f'DISCORD_RESPONSE: {response.text}')
+            return response.text
+
+        except (httpx.RequestError, httpx.HTTPError, Exception) as error:
+            logging.exception(
+                f'falha ao tentar enviar log para o discord. Error: {error}'
+            )
+
+            return f'falha ao tentar enviar log para o discord. Error: {error}'
+
+    def __generate_embed_list(self, color, emoji, error_traceback, title):
+        """
+        Gera a lista de incorporação.
+
+        Parameters
+
+        color: str
+            Cor do texto
+
+        emoji: str
+            Emoji do texto
+
+        error_traceback: str
+            Traceback do error
+
+        title: str
+            Titulo do log
+
+        Return:
+            payload: dict
+
+        """
+
+        MAX_ERROR_TRACEBACK_LENGTH = 1904
+        TEXT_SIZE = 4096
+        embeds = []
+
+        if (
+            len(error_traceback)
+            > self.__number_characters - MAX_ERROR_TRACEBACK_LENGTH
+        ):
+
+            if len(error_traceback) > self.__number_characters:
                 error_traceback = (
                     '... '
                     + error_traceback[
                         len(error_traceback)
-                        - self.number_characters
+                        - self.__number_characters
                         - 4 : len(error_traceback)
                     ]
                 )
 
-            text_size = 4096
-            embeds = []
-
-            for index in range(0, len(error_traceback), text_size):
+            for index in range(0, len(error_traceback), TEXT_SIZE):
 
                 if index == 0:
                     embeds.append(
                         {
                             'title': f'{emoji}{self.mode.upper()} - {title}',
-                            'description': f'_ _ \n {error_traceback[index:index + text_size - 83]} ...',
+                            'description': f'_ _ \n {error_traceback[index:index + TEXT_SIZE - 83]} ...',
                             'color': color,
                         }
                     )
@@ -154,22 +212,12 @@ class LogDiscord:
                 embeds.append(
                     {
                         'title': 'continuation',
-                        'description': f'_ _ \n ... {error_traceback[index:index + text_size]}',
+                        'description': f'_ _ \n ... {error_traceback[index:index + TEXT_SIZE]}',
                         'color': color,
                     }
                 )
 
-            payload['embeds'] = embeds
-
-        try:
-            response = httpx.post(self.webhook, params=params, json=payload)
-            print(f'DISCORD_RESPONSE: {response.text}')
-            return response.text
-
-        except Exception as error:
-            logging.exception(
-                f'falha ao tentar enviar log para o discord. Error: {error}'
-            )
+        return embeds
 
     def __generate_payload(self, color, emoji, error_traceback, title):
         """
@@ -210,10 +258,10 @@ class LogDiscord:
 
 
 if __name__ == '__main__':
-    log_discord = LogDiscord()
+    log_discord = LogDiscord(mode='DEVELOPMENT')
     try:
-        25/0
+        25 / 0
     except Exception as error:
-        result = log_discord.send(log_level=3)
+        result = log_discord.send(log_level=1)
 
     print(result)
