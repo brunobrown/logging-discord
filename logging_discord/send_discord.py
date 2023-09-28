@@ -70,7 +70,7 @@ class LogDiscord:
         self.avatar_url = avatar_url
         self.mode = mode
         self.app_name = app_name
-        self.__number_characters = 6000
+        self.__number_characters = 6010
 
     def send(
         self,
@@ -116,7 +116,7 @@ class LogDiscord:
             error_traceback = traceback.format_exc()
 
         if error_message:
-            error_message = f' \n > **error_message**: {error_message}'
+            error_message = f'\n\n>>> ```error_message:\n\n{error_message}```'
 
         error_traceback = f'{error_traceback}{error_message}'
 
@@ -187,15 +187,7 @@ class LogDiscord:
             > self.__number_characters - MAX_ERROR_TRACEBACK_LENGTH
         ):
 
-            if len(error_traceback) > self.__number_characters:
-                error_traceback = (
-                    '... '
-                    + error_traceback[
-                        len(error_traceback)
-                        - self.__number_characters
-                        - 4 : len(error_traceback)
-                    ]
-                )
+            error_traceback = self.__remove_extra_characters(error_traceback)
 
             for index in range(0, len(error_traceback), TEXT_SIZE):
 
@@ -218,6 +210,34 @@ class LogDiscord:
                 )
 
         return embeds
+
+    def __remove_extra_characters(self, error_traceback):
+        """
+        Remove caracteres extras do error_traceback fornecido se seu
+        comprimento for maior que `self.__number_characters`.
+
+        Este método recebe uma string de rastreamento de erro como entrada.
+        Se o comprimento do traceback de erro for maior que
+        `self.__number_characters`, o método removerá caracteres extras do
+        início da string de traceback e os substituirá por reticências (...),
+        e mantendo o último `self.__number_characters` menos 4 caracteres.
+
+        Parameters:
+            error_traceback (str): The error traceback string.
+
+        Returns:
+            str: The modified error traceback string.
+        """
+        if len(error_traceback) > self.__number_characters:
+            error_traceback = f"""... {
+                error_traceback[
+                    len(error_traceback) 
+                    - self.__number_characters 
+                    - 4: len(error_traceback)
+                ]
+            }"""
+
+        return error_traceback
 
     def __generate_payload(self, color, emoji, error_traceback, title):
         """
@@ -260,8 +280,12 @@ class LogDiscord:
 if __name__ == '__main__':
     log_discord = LogDiscord(mode='DEVELOPMENT')
     try:
-        25 / 0
+        # 25 / 0
+        raise Exception(f'{"x" * 3000 + "B"}')
     except Exception as error:
-        result = log_discord.send(log_level=1)
+        result = log_discord.send(
+            log_level=3,
+            error_message='Testando quantidade gigante de caracteres na mensagem :)',
+        )
 
-    print(result)
+        print(result)

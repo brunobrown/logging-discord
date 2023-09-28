@@ -5,7 +5,7 @@ log_discord = LogDiscord()
 
 def test_if_the_data_type_is_valid():
     # Arrange
-    log_level = 'number'
+    log_level = 3
 
     # Act
     result = log_discord.send(
