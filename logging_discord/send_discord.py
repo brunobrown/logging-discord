@@ -35,28 +35,37 @@ class LogDiscord:
 
     """
 
-    log_levels = {
-        #   color legend:
-        #   * 2040357 = Black
-        #   * 8947848 = Gray
-        #   * 2196944 = Blue
-        #   * 16497928 = Yellow
-        #   * 14362664 = Red
-        0: {
-            'emoji': ':thinking:   ',
-            'title': 'UNKNOWN ERROR',
-            'color': 2040357,
-        },
-        1: {'emoji': ':bug:   ', 'title': 'DEBUG', 'color': 8947848},
-        2: {
-            'emoji': ':information_source:   ',
-            'title': 'INFO',
-            'color': 2196944,
-        },
-        3: {'emoji': ':warning:   ', 'title': 'WARNING', 'color': 16497928},
-        4: {'emoji': ':x:   ', 'title': 'ERROR', 'color': 14362664},
-        5: {'emoji': ':sos:   ', 'title': 'CRITICAL', 'color': 14362664},
-    }
+    try:
+        from discord_config import channel, log_levels
+
+    except ImportError:
+
+        log_levels = {
+            #   color legend:
+            #   * 2040357 = Black
+            #   * 8947848 = Gray
+            #   * 2196944 = Blue
+            #   * 16497928 = Yellow
+            #   * 14362664 = Red
+            0: {
+                'emoji': ':thinking:   ',
+                'title': 'UNKNOWN ERROR',
+                'color': 2040357,
+            },
+            1: {'emoji': ':bug:   ', 'title': 'DEBUG', 'color': 8947848},
+            2: {
+                'emoji': ':information_source:   ',
+                'title': 'INFO',
+                'color': 2196944,
+            },
+            3: {
+                'emoji': ':warning:   ',
+                'title': 'WARNING',
+                'color': 16497928,
+            },
+            4: {'emoji': ':x:   ', 'title': 'ERROR', 'color': 14362664},
+            5: {'emoji': ':sos:   ', 'title': 'CRITICAL', 'color': 14362664},
+        }
 
     def __init__(
         self,
@@ -71,6 +80,12 @@ class LogDiscord:
         self.mode = mode
         self.app_name = app_name
         self.__number_characters = 6010
+
+        if hasattr(self, 'channel'):
+            self.webhook = self.channel.get('webhook')
+            self.avatar_url = self.channel.get('avatar_url')
+            self.mode = self.channel.get('mode')
+            self.app_name = self.channel.get('app_name')
 
     def send(
         self,
@@ -148,12 +163,21 @@ class LogDiscord:
             print(f'DISCORD_RESPONSE: {response.text}')
             return response.text
 
-        except (httpx.RequestError, httpx.HTTPError, Exception) as error:
+        except (
+            httpx.RequestError,
+            httpx.HTTPError,
+            Exception,
+        ) as publish_record_error:
+
             logging.exception(
-                f'falha ao tentar enviar log para o discord. Error: {error}'
+                f'falha ao tentar enviar log para o discord. '
+                f'Error: {publish_record_error}'
             )
 
-            return f'falha ao tentar enviar log para o discord. Error: {error}'
+            return (
+                f'falha ao tentar enviar log para o discord. '
+                f'Error: {publish_record_error}'
+            )
 
     def __generate_embed_list(self, color, emoji, error_traceback, title):
         """
@@ -230,11 +254,11 @@ class LogDiscord:
         """
         if len(error_traceback) > self.__number_characters:
             error_traceback = f"""... {
-                error_traceback[
-                    len(error_traceback) 
-                    - self.__number_characters 
-                    - 4: len(error_traceback)
-                ]
+            error_traceback[
+            len(error_traceback)
+            - self.__number_characters
+            - 4: len(error_traceback)
+            ]
             }"""
 
         return error_traceback
