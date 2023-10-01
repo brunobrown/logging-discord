@@ -6,10 +6,10 @@ A classe `LogDiscord` é uma ferramenta que facilita o registro de mensagens de 
 
 - [Parâmetros](#parâmetros)
 - [Método `send`](#método-send)
-- [Método Privado `__publish_record`](#método-privado-publish-record)
-- [Método Privado `__generate_embed_list`](#método-privado-generate-embed-list)
-- [Método Privado `__remove_extra_characters`](#método-privado-remove-extra-characters)
-- [Método Privado `__generate_payload`](#método-privado-generate-payload)
+- [Método Privado `publish_record`](#método-privado-publish-record)
+- [Método Privado `generate_embed_list`](#método-privado-generate-embed-list)
+- [Método Privado `emove_extra_characters`](#método-privado-remove-extra-characters)
+- [Método Privado `generate_payload`](#método-privado-generate-payload)
 - [Configuração via 'discord_config.py'](#configuração-via-discord_configpy)
 - [Exemplos de Uso](#exemplos-de-uso)
 
@@ -49,13 +49,13 @@ logger.send(show_traceback=True, error_message="Erro crítico ocorreu!", log_lev
 
 ---
 
-## Método Privado `__publish_record`
+## Método Privado `publish_record`
 
 O método privado `__publish_record` é usado internamente para enviar o registro para o Discord. Não é necessário chamá-lo diretamente.
 
 ---
 
-## Método Privado `__generate_embed_list`
+## Método Privado `generate_embed_list`
 
 O método privado `__generate_embed_list` é usado internamente para gerar uma lista de incorporação (embeds) a serem incluídas na mensagem de erro. Ele aceita os seguintes parâmetros:
 
@@ -68,7 +68,7 @@ Não é necessário chamá-lo diretamente.
 
 ---
 
-## Método Privado `__remove_extra_characters`
+## Método Privado `remove_extra_characters`
 
 O método privado `__remove_extra_characters` é usado internamente para remover caracteres extras do traceback se seu comprimento exceder self.__number_characters.
 
@@ -76,7 +76,7 @@ Não é necessário chamá-lo diretamente.
 
 ---
 
-## Método Privado `__generate_payload`
+## Método Privado `generate_payload`
 
 O método privado `__generate_payload` é usado internamente para gerar a estrutura de payload que será enviada ao Discord. Ele aceita os seguintes parâmetros:
 

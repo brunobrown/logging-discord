@@ -309,7 +309,8 @@ if __name__ == '__main__':
     except Exception as error:
         result = log_discord.send(
             log_level=3,
-            error_message='Testando quantidade gigante de caracteres na mensagem :)',
+            error_message='Testando quantidade gigante de caracteres na '
+            'mensagem :)',
         )
 
         print(result)
