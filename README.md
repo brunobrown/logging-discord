@@ -6,10 +6,10 @@ A classe `LogDiscord` é uma ferramenta que facilita o registro de mensagens de 
 
 - [Parâmetros](#parâmetros)
 - [Método `send`](#método-send)
-- [Método Privado `publish_record`](#método-privado-publish-record)
-- [Método Privado `generate_embed_list`](#método-privado-generate-embed-list)
-- [Método Privado `emove_extra_characters`](#método-privado-remove-extra-characters)
-- [Método Privado `generate_payload`](#método-privado-generate-payload)
+- [Método Privado `publish_record`](#método-privado-publish_record)
+- [Método Privado `generate_embed_list`](#método-privado-generate_embed_list)
+- [Método Privado `emove_extra_characters`](#método-privado-remove_extra_characters)
+- [Método Privado `generate_payload`](#método-privado-generate_payload)
 - [Configuração via 'discord_config.py'](#configuração-via-discord_configpy)
 - [Exemplos de Uso](#exemplos-de-uso)
 
