@@ -24,4 +24,11 @@ jobs:
         run: poetry install --without doc
 
       - name: Run tests
+        # env:
+        #  SECRET_VALUE: ${{ secrets.DISCORD_WEBHOOK_TEST }}
         run: poetry run task test
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}

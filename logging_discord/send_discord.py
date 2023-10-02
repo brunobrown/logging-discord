@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import logging
 import traceback
-
 import httpx
 
 from config import settings
