@@ -26,7 +26,7 @@ jobs:
       - name: Run tests
         # env:
         #  SECRET_VALUE: ${{ secrets.DISCORD_WEBHOOK_TEST }}
-        run: poetry run task test
+        run: poetry run task test --cov-report=xml
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
