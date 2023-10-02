@@ -69,7 +69,7 @@ class LogDiscord:
 
     def __init__(
         self,
-        webhook: str = settings.discord.WEBHOOK,
+        webhook: str = settings.development.WEBHOOK,
         avatar_url: str = settings.development.AVATAR_URL,
         mode: str = settings.development.MODE,
         app_name: str = settings.development.APP_NAME,

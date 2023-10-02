@@ -7,7 +7,7 @@ class TestInit:
     #  Initializes LogDiscord with default settings
     def test_initializes_with_default_settings(self):
         # Arrange
-        webhook = settings.discord.WEBHOOK
+        webhook = settings.development.WEBHOOK
         avatar_url = settings.development.AVATAR_URL
         mode = settings.development.MODE
         app_name = settings.development.APP_NAME
@@ -82,7 +82,7 @@ class TestInit:
     #  Initializes LogDiscord with empty avatar_url
     def test_initializes_with_empty_avatar_url(self):
         # Arrange
-        webhook = settings.discord.WEBHOOK
+        webhook = settings.development.WEBHOOK
         avatar_url = ''
         mode = settings.development.MODE
         app_name = settings.development.APP_NAME
@@ -99,7 +99,7 @@ class TestInit:
     #  Initializes LogDiscord with empty mode
     def test_initializes_with_empty_mode(self):
         # Arrange
-        webhook = settings.discord.WEBHOOK
+        webhook = settings.development.WEBHOOK
         avatar_url = settings.development.AVATAR_URL
         mode = ''
         app_name = settings.development.APP_NAME
