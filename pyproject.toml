@@ -40,6 +40,30 @@ addopts = "--doctest-modules"
 [tool.isort]
 profile = "black"
 line_length = 79
+force_single_line = true
+combine_as_imports = true
+lines_between_types = 1
+lines_after_imports = 2
+src_paths = ["project", "tests"]
+
+[tool.black]
+line-length = 79
+targer-version = ['py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.venv
+  | \.env
+  | cdk.out
+  | \.vscode
+  | build
+  | dist
+  | \.mypy_cache
+  | \.idea
+)\
+'''
 
 [tool.taskipy.tasks]
 lint = "blue --check --diff . && isort --check --diff . && blue ."
@@ -47,3 +71,8 @@ docs = "mkdocs serve"
 pre_test = "task lint"
 test = "pytest -s -x --cov=logging_discord -vv"
 post_test = "coverage html"
+
+#[tool.bandit]
+#exclude_dirs = [
+#  ".venv"
+#]

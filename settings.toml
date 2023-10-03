@@ -1,16 +1,17 @@
 [default]
-    WEBHOOK = 'https://discord.com/api/webhooks/1234567890/test'
-    AVATAR_URL = 'https://i0.wp.com/www.theterminatorfans.com/wp-content/uploads/2012/09/the-terminator3.jpg?resize=900%2C450&ssl=1'
-    MODE = 'DEVELOPMENT'
-    APP_NAME = 'APP_TEST'
+WEBHOOK = 'https://discord.com/api/webhooks/1234567890/test'
+AVATAR_URL = 'https://i0.wp.com/www.theterminatorfans.com/wp-content/uploads/2012/09/the-terminator3.jpg?resize=900%2C450&ssl=1'
+MODE = 'DEVELOPMENT'
+APP_NAME = 'APP_TEST'
 
 [development]
-    WEBHOOK = 'https://discord.com/api/webhooks/1234567890/test'
-    AVATAR_URL = 'https://i0.wp.com/www.theterminatorfans.com/wp-content/uploads/2012/09/the-terminator3.jpg?resize=900%2C450&ssl=1'
-    MODE = 'DEVELOPMENT'
-    APP_NAME = 'APP_TEST'
+WEBHOOK = 'https://discord.com/api/webhooks/1234567890/test'
+AVATAR_URL = 'https://i0.wp.com/www.theterminatorfans.com/wp-content/uploads/2012/09/the-terminator3.jpg?resize=900%2C450&ssl=1'
+MODE = 'DEVELOPMENT'
+APP_NAME = 'APP_TEST'
 
 [homologation]
 
 
 [production]
+WEBHOOK = 'test'

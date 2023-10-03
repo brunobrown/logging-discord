@@ -36,7 +36,8 @@ class LogDiscord:
     """
 
     try:
-        from discord_config import channel, log_levels
+        from discord_config import channel
+        from discord_config import log_levels
 
     except ImportError:
 
@@ -69,11 +70,14 @@ class LogDiscord:
 
     def __init__(
         self,
-        webhook: str = settings.development.WEBHOOK,
-        avatar_url: str = settings.development.AVATAR_URL,
-        mode: str = settings.development.MODE,
-        app_name: str = settings.development.APP_NAME,
+        webhook: str = settings.WEBHOOK,
+        avatar_url: str = settings.AVATAR_URL,
+        mode: str = settings.MODE,
+        app_name: str = settings.APP_NAME,
     ):
+
+        # test = settings.current_env
+        # print(test)
 
         self.webhook = webhook
         self.avatar_url = avatar_url
