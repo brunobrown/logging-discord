@@ -1,4 +1,4 @@
-from config import settings
+from logging_discord.config import settings
 from logging_discord.send_discord import LogDiscord
 
 
@@ -7,7 +7,7 @@ class TestInit:
     #  Initializes LogDiscord with default settings
     def test_initializes_with_default_settings(self):
         # Arrange
-        webhook = settings.WEBHOOK
+        webhook = settings.WEBHOOK + settings.TOKEN
         avatar_url = settings.AVATAR_URL
         mode = settings.MODE
         app_name = settings.APP_NAME

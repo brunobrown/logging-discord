@@ -1,15 +1,13 @@
+from __future__ import annotations
+
 from dynaconf import Dynaconf
 
 
-# current_directory = os.path.dirname(os.path.realpath(__file__))
+# current_directory = Path(__file__).parents[1]
 
 settings = Dynaconf(
     environments=True,
     load_dotenv=False,
-    # settings_files=[
-    #     f"{current_directory}/settings.toml",
-    #     f"{current_directory}/.secrets.toml"
-    # ],
     settings_files=['settings.toml', '.secrets.toml'],
     envvar_prefix='LOG_DISCORD',
     enviroments=['development', 'production'],

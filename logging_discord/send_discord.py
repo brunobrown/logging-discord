@@ -5,7 +5,7 @@ import traceback
 
 import httpx
 
-from config import settings
+from logging_discord.config import settings
 
 
 class LogDiscord:
@@ -70,7 +70,7 @@ class LogDiscord:
 
     def __init__(
         self,
-        webhook: str = settings.WEBHOOK,
+        webhook: str = settings.WEBHOOK + settings.TOKEN,
         avatar_url: str = settings.AVATAR_URL,
         mode: str = settings.MODE,
         app_name: str = settings.APP_NAME,
@@ -306,15 +306,15 @@ class LogDiscord:
 
 
 if __name__ == '__main__':
+
     log_discord = LogDiscord(mode='DEVELOPMENT')
     try:
-        # 25 / 0
         raise Exception(f'{"x" * 3000 + "B"}')
+
     except Exception as error:
         result = log_discord.send(
             log_level=3,
-            error_message='Testando quantidade gigante de caracteres na '
-            'mensagem :)',
+            error_message='Testando o envio ...',
         )
 
         print(result)

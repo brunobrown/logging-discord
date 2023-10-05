@@ -16,7 +16,7 @@ jobs:
           python-version: '3.11.5'
 
       - name: Install Poetry
-        run:
+        run: |
           python -m pip install --upgrade pip
           pip install poetry
 
@@ -24,9 +24,13 @@ jobs:
         run: poetry install --without doc
 
       - name: Run tests
-        # env:
-        #  SECRET_VALUE: ${{ secrets.DISCORD_WEBHOOK_TEST }}
-        run: poetry run task test --cov-report=xml
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+        run: |
+          echo "testando... -> $DISCORD_TOKEN"
+          export LOG_DISCORD_TOKEN=$DISCORD_TOKEN
+          poetry run python logging_discord/send_discord.py
+          poetry run task test --cov-report=xml
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
