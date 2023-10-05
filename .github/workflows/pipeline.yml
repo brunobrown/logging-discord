@@ -28,7 +28,6 @@ jobs:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
         run: |
           export LOG_DISCORD_TOKEN=$DISCORD_TOKEN
-          poetry run python logging_discord/send_discord.py
           poetry run task test --cov-report=xml
 
       - name: Upload coverage reports to Codecov
