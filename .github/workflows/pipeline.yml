@@ -25,10 +25,8 @@ jobs:
 
       - name: Run tests
         env:
-          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN_2 }}
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
         run: |
-          echo "testando 1... -> ${{ secrets.DISCORD_TOKEN_2 }}"
-          echo "testando 2... -> $DISCORD_TOKEN"
           export LOG_DISCORD_TOKEN=$DISCORD_TOKEN
           poetry run python logging_discord/send_discord.py
           poetry run task test --cov-report=xml
