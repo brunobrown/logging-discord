@@ -1,4 +1,4 @@
-from logging_discord.config import settings
+from logging_discord.dynaconf_config import settings
 from logging_discord.send_discord import LogDiscord
 
 

@@ -5,7 +5,7 @@ import traceback
 
 import httpx
 
-from logging_discord.config import settings
+from logging_discord.dynaconf_config import settings
 
 
 class LogDiscord:
