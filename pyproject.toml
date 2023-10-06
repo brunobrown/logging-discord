@@ -5,9 +5,27 @@ description = ""
 authors = ["bruno_brown <brunobrown.86@gmail.com>"]
 readme = "README.md"
 packages = [{include = "logging_discord"}]
+classifiers = [
+    "Topic :: Software Development :: Debuggers",
+    "Intended Audience :: Developers",
+    "Natural Language :: Portuguese (Brazilian)",
+
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.11"
+
+]
+
+[tool.poetry.urls]
+"Documentation" = "https://logging-discord.readthedocs.io/en/latest/"
+"GitHub" = "https://github.com/brunobrown/logging-discord"
+"Bug Tracker" = "https://github.com/brunobrown/logging-discord/issues"
+"Donate" = "https://github.com/brunobrown/"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.11"
 httpx = "^0.25.0"
 dynaconf = "^3.2.3"
 config = "^0.5.1"
@@ -67,7 +85,7 @@ extend-exclude = '''
 
 [tool.taskipy.tasks]
 lint = "blue --check --diff . && isort --check --diff . && blue ."
-docs = "mkdocs serve"
+docs = "mkdocs serve --config-file docs/en/mkdocs.yml"
 pre_test = "task lint"
 test = "pytest -s -x --cov=logging_discord -vv"
 post_test = "coverage html"

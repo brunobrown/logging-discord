@@ -5,9 +5,14 @@ edit_uri: /tree/master/docs
 
 theme:
   name: material
-  language: pt-BR
   logo: /assets/logo.png
+  language: pt-BR
+  custom_dir: .
   favicon: /assets/favicon.png
+  static_templates:
+    - "404.html"
+    - "sitemap.xml"
+    - "robots.txt"
 
 markdown_extensions:
   - attr_list
@@ -31,6 +36,18 @@ plugins:
       handlers:
         python:
           paths: [ docs/logging_discord ]
+  - search
+  - i18n:
+      docs_structure: suffix
+      default_language: en
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: pt
+          name: Portuguese
+          build: true
 
 extra:
   commands:
