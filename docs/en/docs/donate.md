@@ -1,35 +1,33 @@
-## Apoie o Projeto
+## Support the Project
 
-Obrigado por considerar apoiar o projeto! Sua ajuda é muito apreciada e me
-ajuda a continuar desenvolvendo e mantendo o software.
+Thank you for considering supporting the project! Your help is greatly appreciated and it enables me
+to continue developing and maintaining the software.
 
-Existem duas maneiras de fazer doações:
+There are two ways to make donations:
 
 ### PIX
 
-Se você preferir fazer uma doação via PIX, siga as instruções abaixo:
+If you prefer to make a donation via PIX, please follow the instructions below:
 
-1. Abra o seu aplicativo de banco.
-2. Selecione a opção de transferência ou pagamento.
-3. Escolha a opção de PIX.
-4. Insira os seguintes dados:
-   - Chave PIX: [Insira sua chave PIX aqui]
-   - Valor: [Insira o valor da doação]
-5. Confirme a transação.
+1. Open your banking app.
+2. Select the transfer or payment option.
+3. Choose the PIX option.
+4. Enter the following details:
+   - PIX Key: [Insert your PIX key here]
+   - Amount: [Insert the donation amount]
+5. Confirm the transaction.
 
-**QR Code PIX:**
-![QR Code PIX](link_para_seu_qr_code_pix.png)
+**PIX QR Code:**
+![PIX QR Code](link_to_your_pix_qr_code.png)
 
 ### Bitcoin
 
-Aceito doações em Bitcoin. Se você deseja fazer uma doação em Bitcoin, use a
-seguinte carteira:
+I accept donations in Bitcoin. If you wish to make a Bitcoin donation, please use the
+following wallet:
 
-- Carteira Bitcoin: [Insira o endereço da carteira Bitcoin aqui]
+- Bitcoin Wallet: [Insert your Bitcoin wallet address here]
 
-**QR Code Bitcoin:**
-![QR Code Bitcoin](link_para_seu_qr_code_bitcoin.png)
+**Bitcoin QR Code:**
+![Bitcoin QR Code](link_to_your_bitcoin_qr_code.png)
 
-Sua contribuição me ajuda a continuar aprimorando o projeto e oferecendo
-suporte à comunidade de usuários. Agradeço pelo seu apoio!
-
+Your contribution helps me to keep improving the project and providing support to the user community. I appreciate your support!

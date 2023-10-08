@@ -1,0 +1,129 @@
+theme:
+  name: material
+#  custom_dir: ../en/docs
+  palette:
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: #404eed
+      accent: amber
+      toggle:
+        icon: material/lightbulb
+        name: Switch to dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: #404eed
+      accent: amber
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+  features:
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - navigation.indexes
+    - content.tooltips
+    - navigation.path
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+  icon:
+      repo: fontawesome/brands/github-alt
+  logo: /assets/logo.png
+  favicon: /assets/favicon.png
+  language: en
+#  static_templates:
+#    - "404.html"
+#    - "sitemap.xml"
+#    - "robots.txt"
+
+repo_name: brunobrown/logging-discord
+repo_url: https://github.com/brunobrown/logging-discord
+edit_uri: /tree/master/docs
+
+plugins:
+  macros:
+  search:
+    lang: en
+#  mkdocstrings:
+#    handlers:
+#      python:
+#        paths: [ docs/en/mkdocs.yml ]
+
+nav:
+- Welcome: /
+
+#nav:
+##- LoggingDiscord: index.md
+#- Languages:
+#  - en: /
+#  - pt: '/pt/'
+
+markdown_extensions:
+  toc:
+    permalink: true
+  markdown.extensions.codehilite:
+    guess_lang: false
+  mdx_include:
+    base_path: docs
+  codehilite: null
+  extra: null
+  pymdownx.highlight:
+    anchor_linenums: true
+  pymdownx.inlinehilite:
+  pymdownx.snippets:
+  admonition: null
+  pymdownx.arithmatex:
+    generic: true
+  footnotes:
+  pymdownx.details:
+  pymdownx.superfences:
+    custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_code_format
+  pymdownx.tabbed:
+    alternate_style: true
+  pymdownx.mark:
+  attr_list: null
+  md_in_html: null
+  pymdownx.emoji:
+    emoji_index: !!python/name:materialx.emoji.twemoji
+    emoji_generator: !!python/name:materialx.emoji.to_svg
+  pymdownx.tasklist:
+
+extra_css:
+  - css/extra.css
+
+extra:
+  commands:
+    import: from logging_discord import LogDiscord
+  analytics:
+    provider: google
+    property: G-YNEVN69SC3
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/brunobrown/logging-discord
+#    - icon: fontawesome/brands/discord
+#      link: https://discord.gg/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/BrunoBrown86
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/bruno-brown-29418167
+#    - icon: fontawesome/brands/dev
+#      link: https://dev.to/
+#    - icon: fontawesome/brands/medium
+#      link: https://medium.com/
+#    - icon: fontawesome/solid/globe
+#      link: https://
+  alternate:
+    - name: English
+      link: /
+      lang: en
+    - name: Português
+      link: /pt/
+      lang: pt
+
+
+copyright: |
+  &copy; 2023 <a href="https://github.com/brunobrown/" 
+  target="_blank" rel="noopener">Bruno Brown</a>
