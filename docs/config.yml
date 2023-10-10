@@ -2,7 +2,7 @@
 
 theme:
   name: material
-  custom_dir: docs/en/
+  custom_dir: docs/
   palette:
     - media: '(prefers-color-scheme: light)'
       scheme: default
@@ -59,10 +59,10 @@ plugins:
   mkdocstrings:
     handlers:
       python:
-        paths: [ mkdocs.yml ]
+        paths: [ logging_discord ]
 
 nav:
-- Welcome: 'index.md'
+- Welcome: /
 
 #nav:
 #- Languages:
@@ -106,6 +106,9 @@ extra_css:
 
 # extra_javascript:
 #  -
+
+watch:
+  - logging_discord
 
 extra:
   commands:
