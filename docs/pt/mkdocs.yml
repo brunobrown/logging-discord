@@ -1,7 +1,0 @@
-INHERIT: ../en/main.yml
-
-docs_dir: ../pt/docs
-
-site_name: Logging Discord 2
-site_description: Este projeto foi criado com o intuito de enviar para o Discord todo o traceback ou uma parte do mesmo junto a uma
-  mensagem de erro se necessário.

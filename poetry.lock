@@ -681,25 +681,6 @@ Markdown = ">=3.3"
 mkdocs = ">=1.1"
 
 [[package]]
-name = "mkdocs-i18n"
-version = "0.4.6"
-description = "MkDocs i18n plugin"
-category = "dev"
-optional = false
-python-versions = "<4,>=3.7"
-files = [
-    {file = "mkdocs-i18n-0.4.6.tar.gz", hash = "sha256:977736ac643e6a9fece2f331c72168dda298b09ed55049a9c3bb6be33e099af0"},
-    {file = "mkdocs_i18n-0.4.6-py3-none-any.whl", hash = "sha256:44054cd7de6150f8e03aa074fc46d9ea661e660c9df0aab802115dd30636bc08"},
-]
-
-[package.dependencies]
-mkdocs = ">=1.1"
-mkdocs-material = "*"
-
-[package.extras]
-test = ["bandit", "black", "bs4", "coverage", "expects", "flake8", "gitlint", "isort", "lxml", "mamba", "pylint"]
-
-[[package]]
 name = "mkdocs-macros-plugin"
 version = "1.0.4"
 description = "Unleash the power of MkDocs with macros and variables"
@@ -762,6 +743,24 @@ files = [
     {file = "mkdocs_material_extensions-1.2-py3-none-any.whl", hash = "sha256:c767bd6d6305f6420a50f0b541b0c9966d52068839af97029be14443849fb8a1"},
     {file = "mkdocs_material_extensions-1.2.tar.gz", hash = "sha256:27e2d1ed2d031426a6e10d5ea06989d67e90bb02acd588bc5673106b5ee5eedf"},
 ]
+
+[[package]]
+name = "mkdocs-static-i18n"
+version = "1.1.0"
+description = "MkDocs i18n plugin using static translation markdown files"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mkdocs_static_i18n-1.1.0-py3-none-any.whl", hash = "sha256:2ced72f3645863dc9471b55e75f230c137c5ce91809981fd2dd77f4dd904f7c5"},
+    {file = "mkdocs_static_i18n-1.1.0.tar.gz", hash = "sha256:ca1497f20dcc10a0434ba1fe8e052a5c7be7036869501a4db8ad85647939db1d"},
+]
+
+[package.dependencies]
+mkdocs = ">=1.5.2"
+
+[package.extras]
+material = ["mkdocs-material (>=9.2.5)"]
 
 [[package]]
 name = "mkdocstrings"
@@ -1390,4 +1389,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "b85e8c3cf75477311f523553631d9b3c33686ac3661615e51dd1954dfb29ea9e"
+content-hash = "8f3939c779a90a3e531a0b6592af3f2c11dd6843ee4d3ac2da49180d9cfe0f1a"

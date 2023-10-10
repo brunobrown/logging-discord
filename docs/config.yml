@@ -1,6 +1,8 @@
+# https://github.com/squidfunk/mkdocs-material/discussions/2346
+
 theme:
   name: material
-#  custom_dir: ../en/docs
+  custom_dir: docs/en/
   palette:
     - media: '(prefers-color-scheme: light)'
       scheme: default
@@ -28,8 +30,8 @@ theme:
     - content.code.select
   icon:
       repo: fontawesome/brands/github-alt
-  logo: /assets/logo.png
-  favicon: /assets/favicon.png
+  logo: assets/img/logo.png
+  favicon: assets/img/favicon.png
   language: en
 #  static_templates:
 #    - "404.html"
@@ -44,19 +46,28 @@ plugins:
   macros:
   search:
     lang: en
-#  mkdocstrings:
-#    handlers:
-#      python:
-#        paths: [ docs/en/mkdocs.yml ]
+  i18n:
+    docs_structure: folder
+    languages:
+      - locale: en
+        name: English
+        build: true
+        default: true
+      - locale: pt
+        name: Português
+        build: true
+  mkdocstrings:
+    handlers:
+      python:
+        paths: [ mkdocs.yml ]
 
 nav:
-- Welcome: /
+- Welcome: 'index.md'
 
 #nav:
-##- LoggingDiscord: index.md
 #- Languages:
 #  - en: /
-#  - pt: '/pt/'
+#  - pt: /pt/
 
 markdown_extensions:
   toc:
@@ -64,7 +75,6 @@ markdown_extensions:
   markdown.extensions.codehilite:
     guess_lang: false
   mdx_include:
-    base_path: docs
   codehilite: null
   extra: null
   pymdownx.highlight:
@@ -92,7 +102,10 @@ markdown_extensions:
   pymdownx.tasklist:
 
 extra_css:
-  - css/extra.css
+  - assets/css/extra.css
+
+# extra_javascript:
+#  -
 
 extra:
   commands:

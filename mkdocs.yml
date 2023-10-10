@@ -1,6 +1,6 @@
-INHERIT: ../main.yml
+INHERIT: docs/config.yml
 
-docs_dir: ../en/docs
+docs_dir: docs/
 
 site_name: Logging Discord
 site_description: Simply and quickly send your project tracebacks and log 

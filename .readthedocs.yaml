@@ -2,7 +2,7 @@ version: 2
 
 mkdocs:
   configuration:
-    docs/en/mkdocs.yml
+    mkdocs.yml
 
 build:
   os: "ubuntu-22.04"
