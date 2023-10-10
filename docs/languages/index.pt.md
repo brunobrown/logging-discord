@@ -1,5 +1,5 @@
 ![Project Logo](
-    assets/img/logo.png
+    img/logo.png
 ){ width='250px' .center }
 
 # Logging Discord
@@ -41,28 +41,20 @@ Existem duas maneiras de fazer doações:
 
 ### PIX
 
-Se você preferir fazer uma doação via PIX, siga as instruções abaixo:
+Se você preferir fazer uma doação via PIX:
 
-1. Abra o seu aplicativo de banco.
-2. Selecione a opção de transferência ou pagamento.
-3. Escolha a opção de PIX.
-4. Insira os seguintes dados:
-   - Chave PIX: [Insira sua chave PIX aqui]
-   - Valor: [Insira o valor da doação]
-5. Confirme a transação.
+   - [PIX ou QR Code](https://nubank.com.br/pagar/az4ws/snv4Ud3fJk)
 
-**QR Code PIX:**
-![QR Code PIX](link_para_seu_qr_code_pix.png)
+![Nubank QR Code:](img/nubank_qrcode.png)
 
 ### Bitcoin
 
 Aceito doações em Bitcoin. Se você deseja fazer uma doação em Bitcoin, use a
 seguinte carteira:
 
-- Carteira Bitcoin: [Insira o endereço da carteira Bitcoin aqui]
+- Bitcoin Wallet: 3QvDoHGUhYksbb9NkoEj7H45md48GXsnp6
 
-**QR Code Bitcoin:**
-![QR Code Bitcoin](link_para_seu_qr_code_bitcoin.png)
+![Bitcoin QR Code](img/bitcoin_qrcode.png)
 
 Sua contribuição me ajuda a continuar aprimorando o projeto e oferecendo
 suporte à comunidade de usuários. Agradeço pelo seu apoio!

@@ -46,8 +46,8 @@ mkdocstrings = "^0.22.0"
 mkdocstrings-python = "^1.1.2"
 mkdocs-macros-plugin = "^1.0.1"
 jinja2 = "^3.1.2"
-mkdocs-static-i18n = "^1.1.0"
 mdx-include = "^1.4.2"
+mkdocs-i18n = "^0.4.6"
 
 [build-system]
 requires = ["poetry-core"]
@@ -87,8 +87,8 @@ extend-exclude = '''
 
 [tool.taskipy.tasks]
 lint = "blue --check --diff . && isort --check --diff . && blue ."
-#docs = "mkdocs serve -f docs/mkdocs.yml"
-docs = "mkdocs serve"
+docs = "mkdocs serve -f docs/mkdocs.yml"
+#docs = "mkdocs serve"
 pre_test = "task lint"
 test = "pytest -s -x --cov=logging_discord -vv"
 post_test = "coverage html"

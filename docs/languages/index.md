@@ -1,5 +1,5 @@
 ![Project Logo](
-    assets/img/logo.png
+    img/logo.png
 ){ width='250px' .center }
 
 # Logging Discord
@@ -41,28 +41,20 @@ There are two ways to make donations:
 
 ### PIX
 
-If you prefer to make a donation via PIX, please follow the instructions below:
+If you prefer to make a donation via PIX:
 
-1. Open your banking app.
-2. Select the transfer or payment option.
-3. Choose the PIX option.
-4. Enter the following details:
-   - PIX Key: [Insert your PIX key here]
-   - Amount: [Insert the donation amount]
-5. Confirm the transaction.
+   - [PIX or QR Code](https://nubank.com.br/pagar/az4ws/snv4Ud3fJk)
 
-**PIX QR Code:**
-![PIX QR Code](link_to_your_pix_qr_code.png)
+![Nubank QR Code:](img/nubank_qrcode.png)
 
 ### Bitcoin
 
 I accept donations in Bitcoin. If you wish to make a Bitcoin donation, please use the
 following wallet:
 
-- Bitcoin Wallet: [Insert your Bitcoin wallet address here]
+- Bitcoin Wallet: 3QvDoHGUhYksbb9NkoEj7H45md48GXsnp6
 
-**Bitcoin QR Code:**
-![Bitcoin QR Code](link_to_your_bitcoin_qr_code.png)
+![Bitcoin QR Code](img/bitcoin_qrcode.png)
 
 Your contribution helps me to keep improving the project and providing support to the user community. I appreciate your support!
 
