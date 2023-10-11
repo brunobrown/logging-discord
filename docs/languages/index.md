@@ -3,31 +3,31 @@
 ){ width='250px' .center }
 
 # Logging Discord
-Este projeto foi criado com o intuito de enviar para o Discord todo o traceback ou uma parte do mesmo junto a uma
-mensagem de erro se necessário.
+This project was created with the purpose of sending the entire traceback or a portion of it along with an
+error message to Discord if necessary.
 
-## Como instalar o pacote?
+## How to Install the Package?
 ```bash
 pip install logging_discord
+
 ```
 
-## Como usar o pacote?
-### Inicio rápido.
+## How to Use the Package?
+### Quick Start.
 
 ```python
 {{ commands.import }}
 
-log_discord = LogDiscord(webhook='https://webhook_do_seu_canal_no_discord')
+log_discord = LogDiscord(webhook='https://your_discord_channel_webhook')
 
 log_discord.send(log_level=1)   # 0 = unknown, 1 = debug, 2 = info, 3 = warning, 4 = error, 5 = critical
-
 ```
 
-## Configuração via `discord_config.py`
+## Configuration via `discord_config.py`
 
-Você pode configurar os parâmetros da classe `LogDiscord` criando um arquivo
-chamado 'discord_config.py' na raiz do projeto. O arquivo 'discord_config.py'
-deve conter as seguintes configurações:
+You can configure the parameters of the LogDiscord class by creating a file
+called 'discord_config.py' at the root of your project. The 'discord_config.py'
+file should contain the following configurations:
 
 ### Exemplo:
 
@@ -64,61 +64,61 @@ log_levels = {
 }
 ```
 
-## Exemplos de Uso
+## Usage Examples
 
-Aqui estão alguns exemplos de como usar a classe `LogDiscord`:
+Here are some examples of how to use the `LogDiscord` class:
 
 ```python
-# Criando uma instância do logger
-logger = LogDiscord(webhook="sua_url_webhook", avatar_url="url_do_avatar", mode="DEVELOPMENT", app_name="MeuApp")
+# Creating a logger instance
+logger = LogDiscord(webhook="your_webhook_url", avatar_url="avatar_url", mode="DEVELOPMENT", app_name="MyApp")
 
-# Enviando um log de erro com traceback
-logger.send(show_traceback=True, error_message="Erro crítico ocorreu!", log_level=5)
+# Sending an error log with traceback
+logger.send(show_traceback=True, error_message="Critical error occurred!", log_level=5)
 
-# Enviando um log de informação
-logger.send(show_traceback=False, error_message="Operação bem-sucedida.", log_level=2)
+# Sending an information log
+logger.send(show_traceback=False, error_message="Operation successful.", log_level=2)
 ```
 
-!!! info "Nota"
-    Lembre-se de ajustar os parâmetros de acordo com suas necessidades e personalizar as mensagens de erro conforme necessário.
+!!! info "Note"
+    Remember to adjust the parameters according to your needs and customize error messages as necessary.
 
 ---
 
-## Como contribuir com o projeto?
-Obrigado pelo interesse em contribuir com o projeto Logging Discord :heart:.
+## How to Contribute to the Project?
+Thank you for your interest in contributing to the **Logging Discord** project! :heart:
 
 ### Tests
-Para os testes estamos usando o [pytest](https://pytest.org/). As configurações podem ser encontradas no 
-arquivo [pyproject.toml](https://github.com/brunobrown/logging-discord/blob/master/pyproject.toml) na raiz do projeto.
+We use [pytest](https://pytest.org/) for testing. Configuration details can be found in the
+[pyproject.toml](https://github.com/brunobrown/logging-discord/blob/master/pyproject.toml) file at the project's root.
 
-Para as tarefas não listadas aqui, você pode consultar as [issues](https://github.com/brunobrown/logging-discord/issues){ target="_blank" }.  
+For tasks not listed here, you can refer to the [issues](https://github.com/brunobrown/logging-discord/issues){ target="_blank" }.
 
 ---
 
-## Apoie o Projeto
+## Support the Project
 
-Obrigado por considerar apoiar o projeto! Sua ajuda é muito apreciada e me
-ajuda a continuar desenvolvendo e mantendo o software.
+Thank you for considering supporting the project! Your help is greatly appreciated and it enables me
+to continue developing and maintaining the software.
 
-Existem duas maneiras de fazer doações:
+There are two ways to make donations:
 
 !!! info "PIX"
 
-    Aceito doações via PIX:
-    
-    - [PIX ou QR Code](https://nubank.com.br/pagar/az4ws/snv4Ud3fJk){ target="_blank" }
+    If you prefer to make a donation via PIX:
+
+    - [PIX or QR Code](https://nubank.com.br/pagar/az4ws/snv4Ud3fJk){ target="_blank" }
 
     ![Nubank QR Code:](img/nubank_qrcode.png){ .center }
 
 
 !!! info "Bitcoin"
 
-    Aceito doações em Bitcoin. Se você deseja fazer uma doação em Bitcoin, use a
-    seguinte carteira:
+    I accept donations in Bitcoin. If you wish to make a Bitcoin donation, please use the
+    following wallet:
 
     - Bitcoin Wallet: 3QvDoHGUhYksbb9NkoEj7H45md48GXsnp6
 
-    ![Bitcoin QR Code](img/bitcoin_qrcode.png){.center }
+    ![Bitcoin QR Code](img/bitcoin_qrcode.png){ .center }
 
-Sua contribuição me ajuda a continuar aprimorando o projeto e oferecendo
-    suporte à comunidade de usuários. Agradeço pelo seu apoio!
+
+Your contribution helps me to keep improving the project and providing support to the user community. I appreciate your support!
