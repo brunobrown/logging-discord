@@ -1,15 +1,14 @@
 # Logging Discord
 
+- [English](README.en.md)
+- [Português](README.md)
+
 A classe `LogDiscord` é uma ferramenta que facilita o registro de mensagens de erro em um canal no Discord. Ela permite o envio de mensagens de erro com informações personalizadas, como um traceback e mensagens específicas. Abaixo, você encontrará detalhes sobre a classe, seus parâmetros e métodos, bem como exemplos de uso.
 
 ## Índice
 
 - [Parâmetros](#parâmetros)
 - [Método `send`](#método-send)
-- [Método Privado `publish_record`](#método-privado-publish_record)
-- [Método Privado `generate_embed_list`](#método-privado-generate_embed_list)
-- [Método Privado `emove_extra_characters`](#método-privado-remove_extra_characters)
-- [Método Privado `generate_payload`](#método-privado-generate_payload)
 - [Configuração via 'discord_config.py'](#configuração-via-discord_configpy)
 - [Exemplos de Uso](#exemplos-de-uso)
 
@@ -35,7 +34,8 @@ logger = LogDiscord()
 
 ## Método `send`
 
-O método send é usado para enviar mensagens de erro para o canal no Discord. Ele aceita os seguintes parâmetros:
+O método send é usado para enviar mensagens de erro para o canal no Discord.
+Ele aceita os seguintes parâmetros:
 
 * `show_traceback` (bool): Se True, exibe o traceback do erro na mensagem.
 * `error_message` (str): Uma mensagem de erro personalizada a ser incluída na mensagem.
@@ -47,51 +47,11 @@ Exemplo de uso:
 logger.send(show_traceback=True, error_message="Erro crítico ocorreu!", log_level=5)
 ```
 
----
-
-## Método Privado `publish_record`
-
-O método privado `__publish_record` é usado internamente para enviar o registro para o Discord. Não é necessário chamá-lo diretamente.
-
----
-
-## Método Privado `generate_embed_list`
-
-O método privado `__generate_embed_list` é usado internamente para gerar uma lista de incorporação (embeds) a serem incluídas na mensagem de erro. Ele aceita os seguintes parâmetros:
-
-* `color` (str): A cor do texto.
-* `emoji` (str): O emoji a ser exibido.
-* `error_traceback` (str): O traceback do erro.
-* `title` (str): O título do log.
-
-Não é necessário chamá-lo diretamente.
-
----
-
-## Método Privado `remove_extra_characters`
-
-O método privado `__remove_extra_characters` é usado internamente para remover caracteres extras do traceback se seu comprimento exceder self.__number_characters.
-
-Não é necessário chamá-lo diretamente.
-
----
-
-## Método Privado `generate_payload`
-
-O método privado `__generate_payload` é usado internamente para gerar a estrutura de payload que será enviada ao Discord. Ele aceita os seguintes parâmetros:
-
-* `color` (str): A cor do texto.
-* `emoji` (str): O emoji a ser exibido.
-* `error_traceback` (str): O traceback do erro.
-* `title` (str): O título do log.
-
-Não é necessário chamá-lo diretamente.
-
----
-
 ## Configuração via `discord_config.py`
 
-Você pode configurar os parâmetros da classe `LogDiscord` criando um arquivo chamado 'discord_config.py' na raiz do projeto. O arquivo 'discord_config.py' deve conter as seguintes configurações:
+Você pode configurar os parâmetros da classe `LogDiscord` criando um arquivo
+chamado 'discord_config.py' na raiz do projeto. O arquivo 'discord_config.py'
+deve conter as seguintes configurações:
 
 Exemplo:
 
