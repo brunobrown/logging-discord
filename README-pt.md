@@ -1,8 +1,5 @@
 # Logging Discord
 
-- [English](README.en.md)
-- [Português](README.md)
-
 A classe `LogDiscord` é uma ferramenta que facilita o registro de mensagens de erro em um canal no Discord. Ela permite o envio de mensagens de erro com informações personalizadas, como um traceback e mensagens específicas. Abaixo, você encontrará detalhes sobre a classe, seus parâmetros e métodos, bem como exemplos de uso.
 
 ## Índice
