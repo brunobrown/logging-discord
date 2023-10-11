@@ -11,6 +11,7 @@ A classe `LogDiscord` é uma ferramenta que facilita o registro de mensagens de 
 - [Método `send`](#método-send)
 - [Configuração via 'discord_config.py'](#configuração-via-discord_configpy)
 - [Exemplos de Uso](#exemplos-de-uso)
+- [Doações](#doações)
 
 ---
 
@@ -106,3 +107,11 @@ logger.send(show_traceback=False, error_message="Operação bem-sucedida.", log_
 ```
 
 #### Lembre-se de ajustar os parâmetros de acordo com suas necessidades e personalizar as mensagens de erro conforme necessário.
+
+---
+
+## Doações
+
+Obrigado por considerar apoiar o projeto! Sua ajuda é muito apreciada e me ajuda a continuar desenvolvendo e mantendo o software.
+
+[Apoie o Projeto](https://logging-discord.readthedocs.io/en/latest/#support-the-project)

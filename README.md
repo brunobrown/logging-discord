@@ -11,6 +11,7 @@ The `LogDiscord` class is a tool that simplifies the logging of error messages t
 - [Method `send`](#method-send)
 - [Configuration via 'discord_config.py'](#configuration-via-discord_configpy)
 - [Usage Examples](#usage-examples)
+- [Donations](#donations)
 
 ---
 
@@ -103,3 +104,11 @@ logger.send(show_traceback=False, error_message="Operation successful.", log_lev
 ```
 
 #### Remember to adjust the parameters according to your needs and customize error messages as necessary.
+
+---
+
+## Donations
+
+Thank you for considering supporting the project! Your help is greatly appreciated and it enables me to continue developing and maintaining the software.
+
+[Support the Project](https://logging-discord.readthedocs.io/en/latest/#support-the-project)
