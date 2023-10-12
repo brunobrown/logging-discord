@@ -15,14 +15,13 @@ classifiers = [
 
     "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python :: 3.11"
-
 ]
 
 [tool.poetry.urls]
 "Documentation" = "https://logging-discord.readthedocs.io/en/latest/"
 "GitHub" = "https://github.com/brunobrown/logging-discord"
 "Bug Tracker" = "https://github.com/brunobrown/logging-discord/issues"
-"Donate" = "https://github.com/brunobrown/"
+"Donate" = "https://logging-discord.readthedocs.io/en/latest/#support-the-project"
 
 [tool.poetry.dependencies]
 python = "^3.11"

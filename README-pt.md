@@ -1,4 +1,9 @@
+<img src="https://logging-discord.readthedocs.io/en/latest/img/logo.png" width="200">
+
 # Logging Discord
+[![Documentation Status](https://readthedocs.org/projects/logging-discord/badge/?version=latest)](https://logging-discord.readthedocs.io/en/latest/?badge=latest)
+![example workflow](https://github.com/brunobrown/logging-discord/actions/workflows/pipeline.yml/badge.svg)
+[![codecov](https://codecov.io/gh/brunobrown/logging-discord/graph/badge.svg?token=XTB97RAJA6)](https://codecov.io/gh/brunobrown/logging-discord)
 
 - [English](README.md)
 - [Português](README-pt.md)
