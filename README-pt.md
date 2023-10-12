@@ -12,45 +12,29 @@ O`Logging Discord` é uma ferramenta que facilita o registro de mensagens de err
 
 ## Índice
 
-- [Parâmetros](#parâmetros)
-- [Método `send`](#método-send)
+- [Como instalar o pacote?](#como-instalar-o-pacote)
+- [Como usar o pacote?](#como-usar-o-pacote)
 - [Configuração via 'discord_config.py'](#configuração-via-discord_configpy)
 - [Exemplos de Uso](#exemplos-de-uso)
 - [Doações](#doações)
 
 ---
 
-## Parâmetros
+## Como instalar o pacote?
 
-A classe `LogDiscord` possui os seguintes parâmetros em seu construtor:
-
-- `webhook` (str): A URL do webhook do canal no Discord. Pode ser configurado no arquivo 'discord_config.py'.
-- `avatar_url` (str): A URL do avatar a ser usado nas mensagens. Pode ser configurado no arquivo 'discord_config.py'.
-- `mode` (str): O modo de desenvolvimento (e.g., "DEVELOPMENT", "HOMOLOGATION", "PRODUCTION"). Pode ser configurado no arquivo 'discord_config.py'.
-- `app_name` (str): O nome do aplicativo que enviará as mensagens de erro. Pode ser configurado no arquivo 'discord_config.py'.
-- `log_level` (int): Define o nível do log (0 = unknown, 1 = debug, 2 = info, 3 = warning, 4 = error, 5 = critical). Pode ser configurado no arquivo 'discord_config.py'.
-
-Exemplo de uso:
-
-```python
-logger = LogDiscord()
+```bash
+pip install logging_discord
 ```
 
----
-
-## Método `send`
-
-O método send é usado para enviar mensagens de erro para o canal no Discord.
-Ele aceita os seguintes parâmetros:
-
-* `show_traceback` (bool): Se True, exibe o traceback do erro na mensagem.
-* `error_message` (str): Uma mensagem de erro personalizada a ser incluída na mensagem.
-* `log_level` (int): Define o nível do log (0 = unknown, 1 = debug, 2 = info, 3 = warning, 4 = error, 5 = critical).
-
-Exemplo de uso:
+## Como usar o pacote?
+### Inicio rápido.
 
 ```python
-logger.send(show_traceback=True, error_message="Erro crítico ocorreu!", log_level=5)
+from logging_discord import LogDiscord
+
+log_discord = LogDiscord(webhook='https://webhook_do_seu_canal_no_discord')
+
+log_discord.send(log_level=1)   # 0 = unknown, 1 = debug, 2 = info, 3 = warning, 4 = error, 5 = critical
 ```
 
 ## Configuração via `discord_config.py`

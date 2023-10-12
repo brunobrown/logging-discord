@@ -12,44 +12,28 @@ The `Logging Discord` is a tool that simplifies the logging of error messages to
 
 ## Table of Contents
 
-- [Parameters](#parameters)
-- [Method `send`](#method-send)
+- [How to Install the Package?](#how-to-install-the-package)
+- [How to Use the Package?](#how-to-use-the-package)
 - [Configuration via 'discord_config.py'](#configuration-via-discord_configpy)
 - [Usage Examples](#usage-examples)
 - [Donations](#donations)
 
----
+## How to Install the Package?
 
-## Parameters
+```bash
+pip install logging_discord
 
-The `LogDiscord` class has the following parameters in its constructor:
-
-- `webhook` (str): The URL of the Discord channel's webhook. It can be configured in the 'discord_config.py' file.
-- `avatar_url` (str): The URL of the avatar to be used in messages. It can be configured in the 'discord_config.py' file.
-- `mode` (str): The development mode (e.g., "DEVELOPMENT," "HOMOLOGATION," "PRODUCTION"). It can be configured in the 'discord_config.py' file.
-- `app_name` (str): The name of the application that will send error messages. It can be configured in the 'discord_config.py' file.
-- `log_level` (int): Sets the log level (0 = unknown, 1 = debug, 2 = info, 3 = warning, 4 = error, 5 = critical). It can be configured in the 'discord_config.py' file.
-
-Example of usage:
-
-```python
-logger = LogDiscord()
 ```
 
----
-
-## Method `send`
-
-The `send` method is used to send error messages to the Discord channel. It accepts the following parameters:
-
-* `show_traceback` (bool): If True, it displays the error traceback in the message.
-* `error_message` (str): A custom error message to be included in the message.
-* `log_level` (int): Sets the log level (0 = unknown, 1 = debug, 2 = info, 3 = warning, 4 = error, 5 = critical).
-
-Example of usage:
+## How to Use the Package?
+### Quick Start.
 
 ```python
-logger.send(show_traceback=True, error_message="Critical error occurred!", log_level=5)
+from logging_discord import LogDiscord
+
+log_discord = LogDiscord(webhook='https://your_discord_channel_webhook')
+
+log_discord.send(log_level=1)   # 0 = unknown, 1 = debug, 2 = info, 3 = warning, 4 = error, 5 = critical
 ```
 
 ## Configuration via `discord_config.py`
