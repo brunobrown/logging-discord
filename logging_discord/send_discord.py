@@ -45,7 +45,10 @@ class LogDiscord:
 
     except AttributeError:
         webhook = 'https://discord.com/api/webhooks/your_token_here'
-        avatar_url = 'https://your_avatar_url_here'
+        avatar_url = (
+            'https://i0.wp.com/www.theterminatorfans.com/wp-content'
+            '/uploads/2012/09/the-terminator3.jpg?resize=900%2C450&ssl=1'
+        )
         mode = 'DEVELOPMENT'
         app_name = 'APP_TEST'
 
