@@ -84,14 +84,77 @@ logger.send(show_traceback=False, error_message="Operation successful.", log_lev
 
 ---
 
-## How to Contribute to the Project?
-Thank you for your interest in contributing to the **Logging Discord** project! :heart:
+## How to Contribute to the Project
 
-### Tests
-We use [pytest](https://pytest.org/) for testing. Configuration details can be found in the
-[pyproject.toml](https://github.com/brunobrown/logging-discord/blob/master/pyproject.toml) file at the project's root.
+The `Logging Discord` project is open source and welcomes contributions from the community. 
+If you want to contribute improvements, bug fixes, or new features, 
+I'm happy to welcome them. Below are the basic steps to get started:
 
-For tasks not listed here, you can refer to the [issues](https://github.com/brunobrown/logging-discord/issues){ target="_blank" }.
+### 1. Clone the Repository
+
+Start by cloning the project's repository:
+
+```shell
+git clone https://github.com/brunobrown/logging-discord.git
+```
+
+### 2. Install Dependencies
+
+Make sure you have all the required dependencies installed. You can use `pip` 
+to install the necessary dependencies:
+
+```shell
+pip install -r requirements.txt
+```
+
+### 3. Create a Virtual Environment (Optional)
+
+I recommend creating a virtual environment for development:
+
+```shell
+python -m venv myenv
+source myenv/bin/activate  # No Windows, use 'myenv\Scripts\activate'
+```
+
+### 4. Contribute Code
+
+Make the changes you want and add or modify the code.
+
+### 5. Test the Changes
+
+Run tests to ensure that your changes have not broken anything. We use [pytest](https://pytest.org/) 
+for testing. You can find the configuration in the [pyproject.toml](https://github.com/brunobrown/logging-discord/blob/master/pyproject.toml) 
+file at the root of the project.
+
+Exemple:
+```shell
+task test
+```
+
+### 6. Create a Pull Request
+
+After completing your changes and tests, create a Pull Request (PR) in the 
+project's repository. Be sure to provide a clear description of what your 
+changes accomplish and which issues they resolve.
+
+### 7. Review and Merge
+
+I will review your PR and provide feedback if necessary. Once approved, your 
+changes will be merged into the main project.
+
+### 8. Thank You for Your Contribution!
+
+Thank you for your interest in contributing to the Logging Discord project. 
+Your collaboration helps improve the software for all users! :heart:
+
+If you have questions or need assistance, please feel free to reach out.
+
+I look forward to seeing your contributions! &#128512;
+
+## Unlisted Tasks
+
+For tasks that are not listed here, you can refer to the
+[issues](https://github.com/brunobrown/logging-discord/issues){ target="_blank" }.  
 
 ---
 

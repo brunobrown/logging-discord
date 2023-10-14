@@ -85,11 +85,72 @@ logger.send(show_traceback=False, error_message="Operação bem-sucedida.", log_
 ---
 
 ## Como contribuir com o projeto?
-Obrigado pelo interesse em contribuir com o projeto Logging Discord :heart:.
 
-### Tests
+O projeto `Logging Discord` é de código aberto e recebe contribuições da comunidade. 
+Se você deseja contribuir com melhorias, correções de bugs ou novos recursos, 
+estou feliz em recebê-las. Abaixo estão as etapas básicas para começar a contribuir:
+
+### 1. Clonar o Repositório
+
+Comece clonando o repositório do projeto:
+
+```shell
+git clone https://github.com/brunobrown/logging-discord.git
+```
+
+### 2. Instalar Dependências
+
+Certifique-se de que você possui todas as dependências instaladas. 
+Você pode usar `pip` para instalar as dependências necessárias:
+
+```shell
+pip install -r requirements.txt
+```
+
+### 3. Criar um Ambiente Virtual (Opcional)
+
+Recomendo criar um ambiente virtual para o desenvolvimento:
+
+```shell
+python -m venv myenv
+source myenv/bin/activate  # No Windows, use 'myenv\Scripts\activate'
+```
+
+### 4. Contribuir com Código
+
+Faça as alterações que deseja e adicione ou modifique o código.
+
+### 5. Test the Changes
+
+Execute os testes para garantir que suas alterações não quebraram nada.
 Para os testes estamos usando o [pytest](https://pytest.org/). As configurações podem ser encontradas no 
 arquivo [pyproject.toml](https://github.com/brunobrown/logging-discord/blob/master/pyproject.toml) na raiz do projeto.
+
+Exemplo:
+```shell
+task test
+```
+
+### 6. Create a Pull Request
+
+Após concluir suas alterações e testes, crie um Pull Request (PR) no repositório do projeto. 
+Certifique-se de fornecer uma descrição clara do que suas alterações realizam e quais problemas elas resolvem.
+
+### 7. Review and Merge
+
+I will review your PR and provide feedback if necessary. Once approved, your 
+changes will be merged into the main project.
+
+### 8. Agradeço a Sua Contribuição!
+
+Obrigado pelo interesse em contribuir com o projeto `Logging Discord`, sua colaboração 
+ajuda a melhorar o software para todos os usuários! :heart:
+
+Se você tiver dúvidas ou precisar de assistência, entre em contato.
+
+Estou ansioso para ver suas contribuições! &#128512;
+
+## Tarefas não listadas
 
 Para as tarefas não listadas aqui, você pode consultar as [issues](https://github.com/brunobrown/logging-discord/issues){ target="_blank" }.  
 
