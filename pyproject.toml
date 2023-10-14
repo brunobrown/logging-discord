@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "logging-discord"
-version = "0.1.0"
+version = "0.4.0"
 description = "The Logging Discord is a tool that simplifies the logging of error messages to a Discord channel. It allows you to send error messages with custom information, including a traceback and specific messages"
 license = "MIT"
 authors = ["bruno_brown <brunobrown.86@gmail.com>"]
@@ -25,7 +25,7 @@ classifiers = [
 "Donate" = "https://logging-discord.readthedocs.io/en/latest/#support-the-project"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 httpx = "^0.25.0"
 dynaconf = "^3.2.3"
 config = "^0.5.1"
