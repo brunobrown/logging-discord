@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "logging-discord"
-version = "0.5.0"
+version = "0.6.0"
 description = "The Logging Discord is a tool that simplifies the logging of error messages to a Discord channel. It allows you to send error messages with custom information, including a traceback and specific messages"
 license = "MIT"
 authors = ["bruno_brown <brunobrown.86@gmail.com>"]

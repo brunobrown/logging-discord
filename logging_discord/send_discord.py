@@ -16,6 +16,10 @@ class LogDiscord:
     que envia mensagens de erro para o Discord, com a opção de mostrar um
     traceback e uma mensagem de erro.
 
+    Caso deseje, também é possível criar um arquivo de configurações contendo
+    as informações de acesso para o seu canal no Discord e a customização dos
+    seus logs. Para mais informações, visite: https://logging-discord.readthedocs.io/en/latest/#configuration-via-discord_configpy
+
     Parameters
 
         webhook: str
@@ -50,10 +54,6 @@ class LogDiscord:
         from discord_config import log_levels
 
     except ImportError:
-        """In case you wish, it's also possible to create a configuration
-        file containing information about your Discord channel. For more
-        information, please visit: https://logging-discord.readthedocs.io/en/latest/#configuration-via-discord_configpy"""
-
         from logging_discord.default import log_levels
 
     def __init__(
