@@ -1,5 +1,5 @@
+from logging_discord import LogDiscord
 from logging_discord.dynaconf_config import settings
-from logging_discord.send_discord import LogDiscord
 
 
 class TestInit:

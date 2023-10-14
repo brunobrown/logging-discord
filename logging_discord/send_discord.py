@@ -14,9 +14,7 @@ class LogDiscord:
     Discord. Recebe como parâmetros um webhook, a URL do avatar, um modo e
     um nome de aplicativo. Possui um método send
     que envia mensagens de erro para o Discord, com a opção de mostrar um
-    traceback e uma mensagem de erro. Também possui dois métodos
-    privados: __publish_record e __generate_embed_list, responsáveis por
-    gerar a lista de incorporação e publicar o registro no Discord.
+    traceback e uma mensagem de erro.
 
     Parameters
 
@@ -36,44 +34,34 @@ class LogDiscord:
     """
 
     try:
+        webhook = settings.WEBHOOK + settings.TOKEN
+        avatar_url = settings.AVATAR_URL
+        mode = settings.MODE
+        app_name = settings.APP_NAME
+
+    except AttributeError:
+        webhook = 'https://discord.com/api/webhooks/your_token_here'
+        avatar_url = 'https://your_avatar_url_here'
+        mode = 'DEVELOPMENT'
+        app_name = 'APP_TEST'
+
+    try:
         from discord_config import channel
         from discord_config import log_levels
 
     except ImportError:
+        """In case you wish, it's also possible to create a configuration
+        file containing information about your Discord channel. For more
+        information, please visit: https://logging-discord.readthedocs.io/en/latest/#configuration-via-discord_configpy"""
 
-        log_levels = {
-            #   color legend:
-            #   * 2040357 = Black
-            #   * 8947848 = Gray
-            #   * 2196944 = Blue
-            #   * 16497928 = Yellow
-            #   * 14362664 = Red
-            0: {
-                'emoji': ':thinking:   ',
-                'title': 'UNKNOWN ERROR',
-                'color': 2040357,
-            },
-            1: {'emoji': ':bug:   ', 'title': 'DEBUG', 'color': 8947848},
-            2: {
-                'emoji': ':information_source:   ',
-                'title': 'INFO',
-                'color': 2196944,
-            },
-            3: {
-                'emoji': ':warning:   ',
-                'title': 'WARNING',
-                'color': 16497928,
-            },
-            4: {'emoji': ':x:   ', 'title': 'ERROR', 'color': 14362664},
-            5: {'emoji': ':sos:   ', 'title': 'CRITICAL', 'color': 14362664},
-        }
+        from logging_discord.default import log_levels
 
     def __init__(
         self,
-        webhook: str = settings.WEBHOOK + settings.TOKEN,
-        avatar_url: str = settings.AVATAR_URL,
-        mode: str = settings.MODE,
-        app_name: str = settings.APP_NAME,
+        webhook: str = webhook,
+        avatar_url: str = avatar_url,
+        mode: str = mode,
+        app_name: str = app_name,
     ):
 
         # test = settings.current_env

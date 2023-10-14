@@ -29,7 +29,7 @@ You can configure the parameters of the LogDiscord class by creating a file
 called 'discord_config.py' at the root of your project. The 'discord_config.py'
 file should contain the following configurations:
 
-### Exemplo:
+### Exemple:
 
 ```python
 channel = {
