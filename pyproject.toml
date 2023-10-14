@@ -9,12 +9,14 @@ packages = [{include = "logging_discord"}]
 classifiers = [
     "Topic :: Software Development :: Debuggers",
     "Intended Audience :: Developers",
+    "Natural Language :: English",
     "Natural Language :: Portuguese (Brazilian)",
 
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 
     "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11"
 ]
 
@@ -88,12 +90,6 @@ extend-exclude = '''
 [tool.taskipy.tasks]
 lint = "blue --check --diff . && isort --check --diff . && blue ."
 docs = "mkdocs serve -f docs/mkdocs.yml"
-#docs = "mkdocs serve"
 pre_test = "task lint"
 test = "pytest -s -x --cov=logging_discord -vv"
 post_test = "coverage html"
-
-#[tool.bandit]
-#exclude_dirs = [
-#  ".venv"
-#]
