@@ -120,7 +120,7 @@ source myenv/bin/activate  # No Windows, use 'myenv\Scripts\activate'
 
 Faça as alterações que deseja e adicione ou modifique o código.
 
-### 5. Test the Changes
+### 5. Testar as Alterações
 
 Execute os testes para garantir que suas alterações não quebraram nada.
 Para os testes estamos usando o [pytest](https://pytest.org/). As configurações podem ser encontradas no 
@@ -131,15 +131,15 @@ Exemplo:
 task test
 ```
 
-### 6. Create a Pull Request
+### 6. Criar um Pull Request
 
 Após concluir suas alterações e testes, crie um Pull Request (PR) no repositório do projeto. 
 Certifique-se de fornecer uma descrição clara do que suas alterações realizam e quais problemas elas resolvem.
 
-### 7. Review and Merge
+### 7. Revisão e Mesclagem
 
-I will review your PR and provide feedback if necessary. Once approved, your 
-changes will be merged into the main project.
+Eu revisarei o seu PR e fornecerei feedback, se necessário. Uma vez aprovado, 
+suas alterações serão mescladas no projeto principal.
 
 ### 8. Agradeço a Sua Contribuição!
 
