@@ -90,7 +90,20 @@ O projeto `Logging Discord` é de código aberto e recebe contribuições da com
 Se você deseja contribuir com melhorias, correções de bugs ou novos recursos, 
 estou feliz em recebê-las. Abaixo estão as etapas básicas para começar a contribuir:
 
-### 1. Clonar o Repositório
+### 1. Ferramentas
+
+Esse projeto basicamente usa duas ferramentas como base para todo com controle:
+
+- [Poetry:](https://python-poetry.org/) Para o gerenciamento do ambiente e instalação de bibliotecas
+
+- [Taskipy:](https://github.com/illBeRoy/taskipy) Para automação de tarefas rotineiras. Como executar os testes, linters, documentação e etc...
+
+Então, garanta que tem o poetry instalado para essa contribuição:
+
+[Como instalar o poetry](https://python-poetry.org/docs/#system-requirements)
+
+
+### 2. Clonar o Repositório
 
 Comece clonando o repositório do projeto:
 
@@ -98,50 +111,67 @@ Comece clonando o repositório do projeto:
 git clone https://github.com/brunobrown/logging-discord.git
 ```
 
-### 2. Instalar Dependências
+### 3. Instalar Dependências
 
 Certifique-se de que você possui todas as dependências instaladas. 
-Você pode usar `pip` para instalar as dependências necessárias:
+Use o `poetry` para instalar as dependências necessárias:
 
 ```shell
-pip install -r requirements.txt
+poetry install
 ```
 
-### 3. Criar um Ambiente Virtual (Opcional)
+### 4. Criar um Ambiente Virtual (Opcional)
 
-Recomendo criar um ambiente virtual para o desenvolvimento:
+Recomendo criar um ambiente virtual para o desenvolvimento.
+
+[Como criar um ambiente virtual](https://python-poetry.org/docs/basic-usage/#activating-the-virtual-environment)
 
 ```shell
-python -m venv myenv
-source myenv/bin/activate  # No Windows, use 'myenv\Scripts\activate'
+poetry shell
 ```
 
-### 4. Contribuir com Código
+### 5. Contribuir com Código
 
 Faça as alterações que deseja e adicione ou modifique o código.
 
-### 5. Testar as Alterações
+### 6. Testar as Alterações
 
 Execute os testes para garantir que suas alterações não quebraram nada.
-Para os testes estamos usando o [pytest](https://pytest.org/). As configurações podem ser encontradas no 
-arquivo [pyproject.toml](https://github.com/brunobrown/logging-discord/blob/master/pyproject.toml) na raiz do projeto.
 
-Exemplo:
+Para os testes estamos usando o [pytest](https://pytest.org/). As configurações
+dele podem ser encontradas no arquivo [pyproject.toml](https://github.com/brunobrown/logging-discord/blob/master/pyproject.toml)
+na raiz do projeto.
+
+> Importante:
+> 
+> Os testes não estão apenas no `diretório logging-discord/tests`. 
+A flag de `addopts = "--doctest-modules"` está sendo usada e caso modifique algo 
+esteja ciente que as docstrings também rodam testes e são a base para documentação da API.
+
+A cobertura de testes é gerada automaticamente com `pytest-cov` e são exibidas
+quando a task de testes é executada:
+
 ```shell
 task test
 ```
+Os linters são requisitos para esses testes.
 
-### 6. Criar um Pull Request
+### 7. Criar um Pull Request
 
 Após concluir suas alterações e testes, crie um Pull Request (PR) no repositório do projeto. 
 Certifique-se de fornecer uma descrição clara do que suas alterações realizam e quais problemas elas resolvem.
 
-### 7. Revisão e Mesclagem
+### 8. Revisão e Mesclagem
 
 Eu revisarei o seu PR e fornecerei feedback, se necessário. Uma vez aprovado, 
 suas alterações serão mescladas no projeto principal.
 
-### 8. Agradeço a Sua Contribuição!
+### 9. Issues
+Caso não tenha encontrado o que precisa, você pode abrir uma 
+[issues](https://github.com/brunobrown/logging-discord/issues){ target="_blank" } no projeto 
+relatando o que não consegue fazer ou o que precisa ser melhor documentado.
+
+### 10. Agradeço a Sua Contribuição!
 
 Obrigado pelo interesse em contribuir com o projeto `Logging Discord`, sua colaboração 
 ajuda a melhorar o software para todos os usuários! :heart:
@@ -149,10 +179,6 @@ ajuda a melhorar o software para todos os usuários! :heart:
 Se você tiver dúvidas ou precisar de assistência, entre em contato.
 
 Estou ansioso para ver suas contribuições! &#128512;
-
-## Tarefas não listadas
-
-Para as tarefas não listadas aqui, você pode consultar as [issues](https://github.com/brunobrown/logging-discord/issues){ target="_blank" }.  
 
 ---
 

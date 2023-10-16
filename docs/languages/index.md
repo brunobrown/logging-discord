@@ -90,7 +90,20 @@ The `Logging Discord` project is open source and welcomes contributions from the
 If you want to contribute improvements, bug fixes, or new features, 
 I'm happy to welcome them. Below are the basic steps to get started:
 
-### 1. Clone the Repository
+### 1. Tools
+
+This project essentially relies on two tools as the foundation for overall control:
+
+- [Poetry:](https://python-poetry.org/) For managing the environment and library installation.
+
+- [Taskipy:](https://github.com/illBeRoy/taskipy) For automating routine tasks,
+such as running tests, linters, documentation, etc.
+
+So, ensure that you have Poetry installed for this contribution:
+
+[How to install Poetry](https://python-poetry.org/docs/#system-requirements)
+
+### 2. Clone the Repository
 
 Start by cloning the project's repository:
 
@@ -98,51 +111,64 @@ Start by cloning the project's repository:
 git clone https://github.com/brunobrown/logging-discord.git
 ```
 
-### 2. Install Dependencies
+### 3. Install Dependencies
 
-Make sure you have all the required dependencies installed. You can use `pip` 
+Make sure you have all the required dependencies installed. Use `poetry` 
 to install the necessary dependencies:
 
 ```shell
-pip install -r requirements.txt
+poetry install
 ```
 
-### 3. Create a Virtual Environment (Optional)
+### 4. Create a Virtual Environment (Optional)
 
 I recommend creating a virtual environment for development:
 
+[How to create a virtual environment](https://python-poetry.org/docs/basic-usage/#activating-the-virtual-environment)
+
 ```shell
-python -m venv myenv
-source myenv/bin/activate  # No Windows, use 'myenv\Scripts\activate'
+poetry shell
 ```
 
-### 4. Contribute Code
+### 5. Contribute Code
 
 Make the changes you want and add or modify the code.
 
-### 5. Test the Changes
+### 6. Test Your Changes
 
-Run tests to ensure that your changes have not broken anything. We use [pytest](https://pytest.org/) 
-for testing. You can find the configuration in the [pyproject.toml](https://github.com/brunobrown/logging-discord/blob/master/pyproject.toml) 
-file at the root of the project.
+Run the tests to ensure your changes haven't broken anything.
 
-Exemple:
+We use [pytest](https://pytest.org/) for testing, and its configuration can be found in the [pyproject.toml](https://github.com/brunobrown/logging-discord/blob/master/pyproject.toml) file at the project's root.
+
+> Important:
+> 
+> Tests are not only in the `logging-discord/tests` directory. 
+The `addopts = "--doctest-modules"` flag is used, and if you modify anything,
+be aware that docstrings also run tests and serve as the basis for API documentation.
+
+Test coverage is automatically generated with `pytest-cov` and is displayed when the test task is executed:
+
 ```shell
 task test
 ```
 
-### 6. Create a Pull Request
+### 7. Create a Pull Request
 
 After completing your changes and tests, create a Pull Request (PR) in the 
 project's repository. Be sure to provide a clear description of what your 
 changes accomplish and which issues they resolve.
 
-### 7. Review and Merge
+### 8. Review and Merge
 
 I will review your PR and provide feedback if necessary. Once approved, your 
 changes will be merged into the main project.
 
-### 8. Thank You for Your Contribution!
+### 9. Issues
+If you haven't found what you need, you can open an 
+[issue](https://github.com/brunobrown/logging-discord/issues){ target="_blank" } 
+in the project to report what you can't do or what needs better documentation.
+
+### 10. Thank You for Your Contribution!
 
 Thank you for your interest in contributing to the Logging Discord project. 
 Your collaboration helps improve the software for all users! :heart:
@@ -150,11 +176,6 @@ Your collaboration helps improve the software for all users! :heart:
 If you have questions or need assistance, please feel free to reach out.
 
 I look forward to seeing your contributions! &#128512;
-
-## Unlisted Tasks
-
-For tasks that are not listed here, you can refer to the
-[issues](https://github.com/brunobrown/logging-discord/issues){ target="_blank" }.  
 
 ---
 
