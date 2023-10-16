@@ -171,7 +171,7 @@ There are two ways to make donations:
 
     - [PIX or QR Code](https://nubank.com.br/pagar/az4ws/snv4Ud3fJk){ target="_blank" }
 
-    ![Nubank QR Code:](img/nubank_qrcode.png){ .center }
+    ![Nubank QR Code:](img/nubank_qrcode.png){ .center width="200px"}
 
 
 !!! info "Bitcoin"
@@ -181,14 +181,14 @@ There are two ways to make donations:
 
     - Bitcoin Wallet: 3QvDoHGUhYksbb9NkoEj7H45md48GXsnp6
 
-    ![Bitcoin QR Code](img/bitcoin_qrcode.png){ .center }
+    ![Bitcoin QR Code](img/bitcoin_qrcode.png){ .center width="200px" }
 
 
 Your contribution helps me to keep improving the project and providing support to the user community. I appreciate your support!
 
 ---
 
-![Proverbs 16 3](img/proverbs_16_3.jpg){ .center }
+![Proverbs 16 3](img/proverbs_16_3.jpg){ .center width="500px" }
 
 [Commit your work to the LORD, and your plans will succeed. Proverbs 16: 3](https://www.bible.com/bible/116/PRO.16.NLT){ target="_blank" }
 

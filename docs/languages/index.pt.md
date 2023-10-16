@@ -169,7 +169,7 @@ Existem duas maneiras de fazer doações:
     
     - [PIX ou QR Code](https://nubank.com.br/pagar/az4ws/snv4Ud3fJk){ target="_blank" }
 
-    ![Nubank QR Code:](img/nubank_qrcode.png){ .center }
+    ![Nubank QR Code:](img/nubank_qrcode.png){ .center width="200px" }
 
 
 !!! info "Bitcoin"
@@ -179,13 +179,13 @@ Existem duas maneiras de fazer doações:
 
     - Bitcoin Wallet: 3QvDoHGUhYksbb9NkoEj7H45md48GXsnp6
 
-    ![Bitcoin QR Code](img/bitcoin_qrcode.png){.center }
+    ![Bitcoin QR Code](img/bitcoin_qrcode.png){ .center width="200px" }
 
 Sua contribuição me ajuda a continuar aprimorando o projeto e oferecendo
     suporte à comunidade de usuários. Agradeço pelo seu apoio!
 
 ---
 
-![Proverbios 16 3](img/proverbios_16_3.jpg){ .center }
+![Proverbios 16 3](img/proverbios_16_3.jpg){ .center width="500px" }
 
 [Peça a Deus que abençoe os seus planos, e eles darão certo. Provérbios 16: 3](https://www.bible.com/bible/211/PRO.16.NTLH){ target="_blank" }
