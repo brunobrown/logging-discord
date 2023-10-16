@@ -106,5 +106,5 @@ Thank you for considering supporting the project! Your help is greatly appreciat
 
 <img src="https://logging-discord.readthedocs.io/en/latest/img/proverbs_16_3.jpg" width="500">
 
-[Commit your work to the LORD, and your plans will succeed. Proverbs 16: 3](https://www.bible.com/bible/116/PRO.16.NLT){ target="_blank" }
+[Commit your work to the LORD, and your plans will succeed. Proverbs 16: 3](https://www.bible.com/bible/116/PRO.16.NLT)
 
