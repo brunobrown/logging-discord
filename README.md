@@ -1,4 +1,4 @@
-<img src="https://logging-discord.readthedocs.io/en/latest/img/logo.png" width="200">
+<img src="https://logging-discord.readthedocs.io/en/latest/img/logo.png" width="250">
 
 # Logging Discord
 [![Documentation Status](https://readthedocs.org/projects/logging-discord/badge/?version=latest)](https://logging-discord.readthedocs.io/en/latest/?badge=latest)
@@ -101,3 +101,10 @@ logger.send(show_traceback=False, error_message="Operation successful.", log_lev
 Thank you for considering supporting the project! Your help is greatly appreciated and it enables me to continue developing and maintaining the software.
 
 [Support the Project](https://logging-discord.readthedocs.io/en/latest/#support-the-project)
+
+---
+
+<img src="https://logging-discord.readthedocs.io/en/latest/img/proverbs_16_3.jpg" width="500">
+
+[Commit your work to the LORD, and your plans will succeed. Proverbs 16: 3](https://www.bible.com/bible/116/PRO.16.NLT){ target="_blank" }
+

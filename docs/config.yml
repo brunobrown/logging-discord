@@ -57,11 +57,11 @@ plugins:
 
 nav:
 - Welcome: /
+- How to Install the Package?: /#how-to-install-the-package
+- Usage Examples: /#usage-examples
+- How to Contribute to the Project: /#how-to-contribute-to-the-project
+- Support the Project: /#support-the-project
 
-#nav:
-#- Languages:
-#  - en: /
-#  - pt: /
 
 markdown_extensions:
   toc:

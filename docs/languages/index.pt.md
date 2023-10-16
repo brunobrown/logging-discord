@@ -188,4 +188,4 @@ Sua contribuição me ajuda a continuar aprimorando o projeto e oferecendo
 
 ![Proverbios 16 3](img/proverbios_16_3.jpg){ .center }
 
-[Peça a Deus que abençoe os seus planos, e eles darão certo.](https://www.bible.com/bible/211/PRO.16.3.NTLH){ target="_blank" }
+[Peça a Deus que abençoe os seus planos, e eles darão certo. Provérbios 16: 3](https://www.bible.com/bible/211/PRO.16.NTLH){ target="_blank" }

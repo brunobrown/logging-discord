@@ -104,3 +104,9 @@ logger.send(show_traceback=False, error_message="Operação bem-sucedida.", log_
 Obrigado por considerar apoiar o projeto! Sua ajuda é muito apreciada e me ajuda a continuar desenvolvendo e mantendo o software.
 
 [Apoie o Projeto](https://logging-discord.readthedocs.io/en/latest/#support-the-project)
+
+---
+
+<img src="https://logging-discord.readthedocs.io/en/latest/img/proverbios_16_3.jpg" width="500">
+
+[Peça a Deus que abençoe os seus planos, e eles darão certo. Provérbios 16: 3](https://www.bible.com/bible/211/PRO.16.NTLH){ target="_blank" }
