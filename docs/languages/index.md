@@ -185,3 +185,10 @@ There are two ways to make donations:
 
 
 Your contribution helps me to keep improving the project and providing support to the user community. I appreciate your support!
+
+---
+
+![Proverbs 16 3](img/proverbs_16_3.jpg){ .center }
+
+[Commit your work to the LORD, and your plans will succeed.](https://www.bible.com/bible/116/PRO.16.3.NLT){ target="_blank" }
+

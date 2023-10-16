@@ -183,3 +183,9 @@ Existem duas maneiras de fazer doações:
 
 Sua contribuição me ajuda a continuar aprimorando o projeto e oferecendo
     suporte à comunidade de usuários. Agradeço pelo seu apoio!
+
+---
+
+![Proverbios 16 3](img/proverbios_16_3.jpg){ .center }
+
+[Peça a Deus que abençoe os seus planos, e eles darão certo.](https://www.bible.com/bible/211/PRO.16.3.NTLH){ target="_blank" }
