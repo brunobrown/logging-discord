@@ -40,7 +40,7 @@ log_discord.send(log_level=1)   # 0 = unknown, 1 = debug, 2 = info, 3 = warning,
 
 ---
 
-## Configuration via `discord_config.py`
+## Configuration with `discord_config.py`
 
 You can configure the parameters of the `LogDiscord` class by creating a file called 'discord_config.py' at the root of the project. The 'discord_config.py' file should contain the following configurations:
 
