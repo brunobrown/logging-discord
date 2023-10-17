@@ -1,6 +1,6 @@
 ![Project Logo](
-    img/logo.png
-){ width='250px' .center }
+    img/logging_discord.png
+){ width='350px' .center }
 
 # Logging Discord
 Este projeto foi criado com o intuito de enviar para o Discord todo o traceback ou uma parte do mesmo junto a uma

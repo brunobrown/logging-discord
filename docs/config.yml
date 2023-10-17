@@ -29,7 +29,7 @@ theme:
     - content.code.select
   icon:
       repo: fontawesome/brands/github-alt
-  logo: img/logo.png
+  logo: img/logging_discord.png
   favicon: img/favicon.png
   language: en
 #  static_templates:

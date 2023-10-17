@@ -1,4 +1,4 @@
-<img src="https://logging-discord.readthedocs.io/en/latest/img/logo.png" width="250">
+<img src="https://logging-discord.readthedocs.io/en/latest/img/logging_discord.png" width="350">
 
 # Logging Discord
 [![Documentation Status](https://readthedocs.org/projects/logging-discord/badge/?version=latest)](https://logging-discord.readthedocs.io/en/latest/?badge=latest)
