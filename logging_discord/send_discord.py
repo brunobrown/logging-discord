@@ -18,7 +18,8 @@ class LogDiscord:
 
     Caso deseje, também é possível criar um arquivo de configurações contendo
     as informações de acesso para o seu canal no Discord e a customização dos
-    seus logs. Para mais informações, visite: https://logging-discord.readthedocs.io/en/latest/#configuration-via-discord_configpy
+    seus logs. Para mais informações, visite:
+    https://logging-discord.readthedocs.io/en/latest/#configuration-via-discord_configpy
 
     Parameters
 
