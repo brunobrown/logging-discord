@@ -23,6 +23,10 @@ log_discord.send(log_level=1)   # 0 = unknown, 1 = debug, 2 = info, 3 = warning,
 
 ```
 
+![error_message](img/error_message.png){ .center }
+
+---
+
 ## Configuração via `discord_config.py`
 
 Você pode configurar os parâmetros da classe `LogDiscord` criando um arquivo
