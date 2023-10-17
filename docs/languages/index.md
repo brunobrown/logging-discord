@@ -92,7 +92,7 @@ I'm happy to welcome them. Below are the basic steps to get started:
 
 ### 1. Tools
 
-This project essentially relies on two tools as the foundation for overall control:
+This project basically uses two tools as a base:
 
 - [Poetry:](https://python-poetry.org/) For managing the environment and library installation.
 

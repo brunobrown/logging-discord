@@ -92,7 +92,7 @@ estou feliz em recebê-las. Abaixo estão as etapas básicas para começar a con
 
 ### 1. Ferramentas
 
-Esse projeto basicamente usa duas ferramentas como base para todo com controle:
+Esse projeto basicamente usa duas ferramentas como base:
 
 - [Poetry:](https://python-poetry.org/) Para o gerenciamento do ambiente e instalação de bibliotecas
 
