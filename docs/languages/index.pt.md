@@ -197,7 +197,7 @@ Existem duas maneiras de fazer doações:
 
     Aceito doações via PIX:
     
-    - [PIX ou QR Code](https://nubank.com.br/pagar/az4ws/snv4Ud3fJk){ target="_blank" }
+    - [PIX ou QR Code](https://nubank.com.br/pagar/az4ws/AwolCAz0H1){ target="_blank" }
 
     ![Nubank QR Code:](img/nubank_qrcode.png){ .center width="200px" }
 

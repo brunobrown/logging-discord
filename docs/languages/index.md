@@ -194,7 +194,7 @@ There are two ways to make donations:
 
     If you prefer to make a donation via PIX:
 
-    - [PIX or QR Code](https://nubank.com.br/pagar/az4ws/snv4Ud3fJk){ target="_blank" }
+    - [PIX or QR Code](https://nubank.com.br/pagar/az4ws/AwolCAz0H1){ target="_blank" }
 
     ![Nubank QR Code:](img/nubank_qrcode.png){ .center width="200px"}
 
