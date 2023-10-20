@@ -3,8 +3,7 @@
 ){ width='350px' .center }
 
 # Logging Discord
-This project was created with the purpose of sending the entire traceback or a portion of it along with an
-error message to Discord if necessary.
+`Logging Discord` is a tool that streamlines error message logging to a Discord channel. It enables the sending of tracebacks and custom specific information messages.
 
 ## How to Install the Package?
 ```bash
