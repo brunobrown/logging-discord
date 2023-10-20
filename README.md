@@ -8,7 +8,7 @@
 - [English](README.md)
 - [Português](README-pt.md)
 
-`Logging Discord` is a tool that streamlines error message logging to a Discord channel. It enables the sending of tracebacks and custom-specific information messages. Below, you will find details, parameters and methods, as well as usage examples.
+`Logging Discord` is a tool that streamlines error message logging to a Discord channel. It enables the sending of tracebacks and custom specific information messages. Below, you will find details, parameters and methods, as well as usage examples.
 
 ## Table of Contents
 
