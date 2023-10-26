@@ -3,7 +3,7 @@
 ){ width='350px' .center }
 
 # Logging Discord
-"Logging Discord" é uma ferramenta que facilita o registro de mensagens de erro em um canal no Discord. Permite o envio de traceback e mensagens com informações específicas e personalizadas.
+`Logging Discord` é uma ferramenta que facilita o registro de mensagens de erro em um canal no Discord. Permite o envio de traceback e mensagens com informações específicas e personalizadas.
 
 ## Como instalar o pacote?
 ```bash
