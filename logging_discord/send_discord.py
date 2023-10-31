@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import functools
 import logging
+import sys
 import traceback
 
 import httpx
@@ -124,7 +126,7 @@ class LogDiscord:
         }
 
         if show_traceback and traceback.format_exc() != 'NoneType: None\n':
-            error_traceback = traceback.format_exc()
+            error_traceback = self.__format_traceback()
 
         if error_message:
             error_message = f'\n\n>>> ```error_message:\n\n{error_message}```'
@@ -148,6 +150,41 @@ class LogDiscord:
             payload['embeds'] = embeds
 
         return self.__publish_record(params, payload)
+
+    @staticmethod
+    def __format_traceback():
+        """
+        Formata traceback
+
+        Return:
+            formatted_text: str
+        """
+
+        exc_type, exc_value, exc_traceback = sys.exc_info()
+        # Obtém o traceback da exceção
+        traceback_list = traceback.extract_tb(exc_traceback)
+
+        # Filtra o traceback para excluir o pacote "Logging Discord"
+        filtered_traceback = [
+            trace
+            for trace in traceback_list
+            if '/logging_discord/send_discord.py' not in trace.filename
+        ]
+
+        formatted_text = '**__Traceback__**\n\n'
+
+        for index, frame in enumerate(filtered_traceback):
+            formatted_text += f'** •━─────━❪ {index} ❫━─────━• **\n'
+            formatted_text += f'* **file:** {frame.filename}\n'
+            formatted_text += f'* **error:** {frame.line}\n'
+            formatted_text += f'* **line:** {frame.lineno}\n'
+            # formatted_text += f'* **locals:** {frame.locals}\n'
+            formatted_text += f'* **function:** {frame.name}\n\n'
+
+        formatted_text += '**__Exception__**\n\n'
+        formatted_text += f'{exc_type.__name__}: {exc_value}\n'
+
+        return formatted_text
 
     def __publish_record(self, params, payload) -> str:
         """
@@ -295,6 +332,39 @@ class LogDiscord:
             'attachments': [],
         }
         return payload
+
+
+def send_log(log_level=1):
+    """
+    Função decoradora que envia logs para o Discord.
+
+    Parameters:
+    - log_level (int): O nível de log a ser usado (0-5).
+    """
+
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            log = LogDiscord()
+
+            try:
+                send_log_error_result = func(*args, **kwargs)
+                return send_log_error_result
+
+            except Exception as send_log_error:
+                exc_type, exc_value, exc_traceback = sys.exc_info()
+
+                name = func.__name__
+                line = exc_traceback.tb_next.tb_lineno
+                error_message = f'Error in function "{name}" (line {line}): {str(send_log_error)}'
+
+                log.send(error_message=error_message, log_level=log_level)
+
+                raise
+
+        return wrapper
+
+    return decorator
 
 
 if __name__ == '__main__':
