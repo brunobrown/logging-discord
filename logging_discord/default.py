@@ -1,16 +1,17 @@
 log_levels = {
     #   color legend:
-    #   * 2040357 = Black
-    #   * 8947848 = Gray
-    #   * 2196944 = Blue
-    #   * 16497928 = Yellow
-    #   * 14362664 = Red
+    #   * UNKNOWN: 0 = Black
+    #   * DEBUG: 35840 = Green
+    #   * INFO: 2196944 = Blue
+    #   * WARNING: 16497928 = Yellow
+    #   * ERROR: 16729344 = Red Orange
+    #   * CRITICAL: 12255250 = Red
     0: {
         'emoji': ':thinking:   ',
-        'title': 'UNKNOWN ERROR',
-        'color': 2040357,
+        'title': 'UNKNOWN',
+        'color': 0,
     },
-    1: {'emoji': ':bug:   ', 'title': 'DEBUG', 'color': 8947848},
+    1: {'emoji': ':beetle:   ', 'title': 'DEBUG', 'color': 35840},
     2: {
         'emoji': ':information_source:   ',
         'title': 'INFO',
@@ -21,6 +22,6 @@ log_levels = {
         'title': 'WARNING',
         'color': 16497928,
     },
-    4: {'emoji': ':x:   ', 'title': 'ERROR', 'color': 14362664},
-    5: {'emoji': ':sos:   ', 'title': 'CRITICAL', 'color': 14362664},
+    4: {'emoji': ':x:   ', 'title': 'ERROR', 'color': 16729344},
+    5: {'emoji': ':sos:   ', 'title': 'CRITICAL', 'color': 12255250},
 }

@@ -174,7 +174,7 @@ class LogDiscord:
         formatted_text = '**__Traceback__**\n\n'
 
         for index, frame in enumerate(filtered_traceback):
-            formatted_text += f'** •━─────━❪ {index} ❫━─────━• **\n'
+            formatted_text += f'** ━──────━❪ {index} ❫━──────━ **\n'
             formatted_text += f'* **file:** {frame.filename}\n'
             formatted_text += f'* **error:** {frame.line}\n'
             formatted_text += f'* **line:** {frame.lineno}\n'
