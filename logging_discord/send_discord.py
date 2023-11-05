@@ -46,7 +46,7 @@ class LogDiscord:
         mode = settings.MODE
         app_name = settings.APP_NAME
 
-    except AttributeError:
+    except AttributeError:  # pragma: no cover
         webhook = 'https://discord.com/api/webhooks/your_token_here'
         avatar_url = (
             'https://i0.wp.com/www.theterminatorfans.com/wp-content'
@@ -55,7 +55,7 @@ class LogDiscord:
         mode = 'DEVELOPMENT'
         app_name = 'APP_TEST'
 
-    try:
+    try:  # pragma: no cover
         from discord_config import channel
         from discord_config import log_levels
 
@@ -79,7 +79,7 @@ class LogDiscord:
         self.app_name = app_name
         self.__number_characters = 6010
 
-        if hasattr(self, 'channel'):
+        if hasattr(self, 'channel'):  # pragma: no cover
             self.webhook = self.channel.get('webhook')
             self.avatar_url = self.channel.get('avatar_url')
             self.mode = self.channel.get('mode')
@@ -126,7 +126,7 @@ class LogDiscord:
         }
 
         if show_traceback and traceback.format_exc() != 'NoneType: None\n':
-            error_traceback = self.__format_traceback()
+            error_traceback = self.__format_traceback()  # pragma: no cover
 
         if error_message:
             error_message = f'\n\n>>> ```error_message:\n\n{error_message}```'
@@ -134,7 +134,7 @@ class LogDiscord:
         error_traceback = f'{error_traceback}{error_message}'
 
         if not isinstance(log_level, int):
-            log_level = 1
+            log_level = 1  # pragma: no cover
 
         emoji = self.log_levels[log_level]['emoji']
         title = self.log_levels[log_level]['title']
@@ -367,7 +367,7 @@ def send_log(log_level=1):
     return decorator
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':   # pragma: no cover
 
     log_discord = LogDiscord(mode='DEVELOPMENT')
     try:
