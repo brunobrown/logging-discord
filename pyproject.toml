@@ -90,6 +90,7 @@ extend-exclude = '''
 
 [tool.taskipy.tasks]
 lint = "blue --check --diff . && isort --check --diff . && blue ."
+format = 'blue .  && isort .'
 docs = "mkdocs serve -f docs/mkdocs.yml"
 pre_test = "task lint"
 test = "pytest -s -x --cov=logging_discord -vv"
