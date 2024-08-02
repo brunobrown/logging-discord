@@ -26,8 +26,13 @@ jobs:
       - name: Run tests
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          SECRETS_DYNACONF: ${{ secrets.SECRETS_DYNACONF }}
         run: |
+          echo "$SECRETS_DYNACONF" > /tmp/.secrets.toml
+          export SECRETS_FOR_DYNACONF=/tmp/.secrets.toml
           export LOG_DISCORD_TOKEN=$DISCORD_TOKEN
+          rm /tmp/.secrets.toml
+          dynaconf -i config.settings list
           poetry run task test --cov-report=xml
 
       - name: Upload coverage reports to Codecov
